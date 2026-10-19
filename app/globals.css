@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #12263A;
+    --color-teal: #1B7F79;
+    --color-teal-deep: #145C58;
+    --color-offwhite: #F7F8F6;
+    --color-mint: #E8F4F1;
+    --color-ink: #17202A;
+    --color-slate: #52616B;
+    --color-gold: #C59B45;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F8F6;
+    color: #17202A;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Focus visible ring meeting WCAG AA */
+  *:focus-visible {
+    outline: 2px solid #1B7F79 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Strict prefers-reduced-motion: disable all non-essential motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .subtle-border {
+    border-color: rgba(18, 38, 58, 0.08);
+  }
+}
