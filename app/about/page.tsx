@@ -8,6 +8,9 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 
+import { SignalBadge } from "@/components/ui/SignalBadge";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 export const metadata: Metadata = {
   title: "About UH | Unhackable Humans",
   description:
@@ -23,10 +26,13 @@ export default function AboutPage() {
         {/* 1. Mission and Origin */}
         <Section variant="offwhite" spacing="spacious" className="border-b border-mint-border">
           <Container>
-            <div className="max-w-3xl space-y-6">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                Our Origin &amp; Mission
-              </span>
+            <ScrollReveal className="max-w-3xl space-y-6">
+              <div className="flex items-center gap-2.5">
+                <SignalBadge number="01" label="ORIGIN & MISSION" />
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
+                  HUMAN SECURITY // 01
+                </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-tight">
                 Minds over Manipulation.
               </h1>
@@ -36,7 +42,7 @@ export default function AboutPage() {
               <p className="text-base text-slate leading-relaxed">
                 When social engineers leverage urgency, panic, authority, or affection, technical firewalls are circumvented from the inside. We exist to build human resilience: equipping everyday individuals, families, and organizations with the cognitive reflexes needed to withstand manipulation.
               </p>
-            </div>
+            </ScrollReveal>
           </Container>
         </Section>
 

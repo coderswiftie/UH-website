@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "../ui/Container";
 
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="w-full bg-navy text-white pt-16 pb-12 border-t border-navy-dark">
@@ -10,8 +12,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Col */}
           <div className="md:col-span-2 lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="text-xl font-extrabold tracking-tight text-white hover:text-teal transition-colors">
+            <Link href="/" className="inline-flex items-center gap-3 group select-none">
+              <div className="relative w-9 h-9 shrink-0 transition-transform duration-200 group-hover:scale-105 opacity-90 group-hover:opacity-100">
+                <Image
+                  src="/images/uh-shield-mark.png"
+                  alt="Unhackable Humans Logo"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+                />
+              </div>
+              <span className="text-xl font-extrabold tracking-tight text-white group-hover:text-teal-light transition-colors">
                 Unhackable Humans
               </span>
             </Link>

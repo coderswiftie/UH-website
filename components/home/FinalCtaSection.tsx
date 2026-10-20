@@ -2,15 +2,17 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Handshake } from "lucide-react";
 import { Container } from "../ui/Container";
+import { ScrollReveal } from "../ui/ScrollReveal";
+import { SignalBadge } from "../ui/SignalBadge";
 
 export function FinalCtaSection() {
   return (
-    <section className="py-20 md:py-28 bg-mint border-b border-mint-border">
-      <Container>
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <span className="text-xs uppercase tracking-widest font-bold text-teal-deep">
-            Join the Movement
-          </span>
+    <section className="relative py-20 md:py-28 bg-mint border-b border-mint-border overflow-hidden">
+      <Container className="relative z-10">
+        <ScrollReveal className="max-w-3xl mx-auto text-center space-y-6">
+          <div className="flex justify-center">
+            <SignalBadge number="07" label="CIVIC PARTICIPATION" />
+          </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-navy tracking-tight leading-tight">
             Stay informed. Stay harder to manipulate.
@@ -23,22 +25,22 @@ export function FinalCtaSection() {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/scam-library"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all shadow-sm hover:-translate-y-0.5"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all shadow-sm hover:shadow-[0_4px_16px_rgba(27,127,121,0.28)] hover:-translate-y-0.5 active:scale-[0.98]"
             >
               <BookOpen className="w-4 h-4" />
               <span>Explore Scam Library</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
 
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-btn bg-white text-navy border border-mint-border font-semibold text-sm hover:bg-offwhite transition-all shadow-subtle hover:-translate-y-0.5"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-btn bg-white text-navy border border-mint-border font-semibold text-sm hover:border-teal/40 hover:bg-offwhite transition-all shadow-subtle hover:-translate-y-0.5 active:scale-[0.98]"
             >
-              <Handshake className="w-4 h-4 text-teal" />
+              <Handshake className="w-4 h-4 text-teal transition-transform duration-200 group-hover:scale-110" />
               <span>Partner With Us</span>
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

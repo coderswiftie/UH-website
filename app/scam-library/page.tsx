@@ -9,6 +9,9 @@ import { Section } from "@/components/ui/Section";
 import { getAllScams, getLatestScam } from "@/lib/content";
 import { ScamLibraryBrowser } from "@/components/scam-library/ScamLibraryBrowser";
 
+import { SignalBadge } from "@/components/ui/SignalBadge";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 export const metadata: Metadata = {
   title: "Breaking Down the Scam | Scam Library | Unhackable Humans",
   description:
@@ -27,17 +30,20 @@ export default function ScamLibraryLandingPage() {
         {/* Header (§5.3) */}
         <Section variant="offwhite" spacing="compact" className="border-b border-mint-border">
           <Container>
-            <div className="max-w-3xl space-y-4">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                Knowledge Platform
-              </span>
+            <ScrollReveal className="max-w-3xl space-y-4">
+              <div className="flex items-center gap-2.5">
+                <SignalBadge number="04" label="SCAM ARCHIVE" />
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
+                  SCAM INTELLIGENCE // 04
+                </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight">
                 Breaking Down the Scam.
               </h1>
               <p className="text-base sm:text-lg text-slate leading-relaxed">
                 An open investigative archive deconstructing how real scams operate. Rather than focusing on technical minutiae, we analyse the psychological triggers—urgency, authority, fear, and greed—and pinpoint the exact exit points where manipulation can be halted.
               </p>
-            </div>
+            </ScrollReveal>
           </Container>
         </Section>
 

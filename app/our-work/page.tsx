@@ -9,6 +9,9 @@ import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { getAllProjects } from "@/lib/content";
 
+import { SignalBadge } from "@/components/ui/SignalBadge";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 export const metadata: Metadata = {
   title: "Our Work | Unhackable Humans",
   description:
@@ -39,17 +42,20 @@ export default function OurWorkPage() {
         {/* Header */}
         <Section variant="offwhite" spacing="compact" className="border-b border-mint-border">
           <Container>
-            <div className="max-w-3xl space-y-4">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                Initiatives Archive
-              </span>
+            <ScrollReveal className="max-w-3xl space-y-4">
+              <div className="flex items-center gap-2.5">
+                <SignalBadge number="03" label="CIVIC INITIATIVES" />
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
+                  CIVIC IMPACT // 03
+                </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight">
                 Where human security becomes action.
               </h1>
               <p className="text-base sm:text-lg text-slate leading-relaxed">
                 We believe awareness without usable interventions is futile. Each initiative below is designed to alter the outcome of a high-risk human interaction.
               </p>
-            </div>
+            </ScrollReveal>
           </Container>
         </Section>
 
@@ -60,8 +66,12 @@ export default function OurWorkPage() {
               {projects.map((proj, idx) => (
                 <div
                   key={proj.id}
-                  className="rounded-card border border-mint-border bg-white shadow-card overflow-hidden hover:border-teal/40 transition-all p-6 md:p-10"
+                  className="rounded-card border border-mint-border bg-white shadow-card overflow-hidden uh-card-hover group relative p-6 md:p-10"
                 >
+                  <div
+                    aria-hidden="true"
+                    className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                  />
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Media Column (Placeholder per Hard Rule 1) */}
                     <div className="lg:col-span-4">
@@ -118,10 +128,10 @@ export default function OurWorkPage() {
                         <div className="pt-2">
                           <Link
                             href={proj.cta.href}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all shadow-sm"
+                            className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all shadow-sm hover:shadow-[0_4px_14px_rgba(27,127,121,0.28)] hover:-translate-y-0.5 active:scale-[0.98]"
                           >
                             <span>{proj.cta.label}</span>
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                           </Link>
                         </div>
                       )}

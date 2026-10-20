@@ -10,6 +10,8 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { InvisibleDevicesFeature } from "@/components/home/InvisibleDevicesFeature";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 
+import { SectionDivider } from "@/components/ui/SectionDivider";
+
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -20,6 +22,9 @@ export default function HomePage() {
         {/* 02 — Hero */}
         <Hero />
 
+        {/* Transition Divider 01 */}
+        <SectionDivider number="01" label="VULNERABILITY MAPPING" />
+
         {/* 03 — The Problem */}
         <ProblemSection />
 
@@ -28,6 +33,9 @@ export default function HomePage() {
 
         {/* 05 — Our Work */}
         <WorkSection />
+
+        {/* Transition Divider 02 */}
+        <SectionDivider number="04" label="INVESTIGATIVE ARCHIVE" />
 
         {/* 06 — Latest Scam Breakdown (Pulled dynamically from mock content) */}
         <LatestScamSection />

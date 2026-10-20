@@ -21,7 +21,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-btn transition-all duration-200 select-none disabled:opacity-50 disabled:pointer-events-none";
+    "group inline-flex items-center justify-center font-medium rounded-btn transition-all duration-200 ease-out select-none disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] active:duration-75 [&_svg]:transition-transform [&_svg]:duration-200 group-hover:[&_svg]:translate-x-1";
 
   const sizeStyles = {
     sm: "px-3.5 py-1.5 text-xs gap-1.5",
@@ -31,14 +31,14 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-teal text-white hover:bg-teal-deep shadow-sm hover:-translate-y-0.5 active:translate-y-0",
+      "bg-teal text-white hover:bg-teal-deep shadow-sm hover:shadow-[0_4px_16px_rgba(27,127,121,0.28)] hover:-translate-y-0.5",
     secondary:
-      "bg-mint text-navy border border-mint-border hover:bg-mint/80 hover:-translate-y-0.5 active:translate-y-0",
+      "bg-mint text-navy border border-mint-border hover:bg-mint/80 hover:border-teal/30 hover:shadow-subtle hover:-translate-y-0.5",
     outline:
-      "bg-transparent text-navy border border-mint-border hover:border-slate/40 hover:bg-white/60 hover:-translate-y-0.5 active:translate-y-0",
+      "bg-transparent text-navy border border-mint-border hover:border-teal/40 hover:bg-white/80 hover:shadow-subtle hover:-translate-y-0.5",
     white:
-      "bg-white text-navy border border-mint-border shadow-subtle hover:bg-offwhite hover:-translate-y-0.5 active:translate-y-0",
-    link: "bg-transparent text-teal hover:text-teal-deep hover:underline p-0 h-auto font-medium",
+      "bg-white text-navy border border-mint-border shadow-subtle hover:border-teal/35 hover:bg-offwhite hover:shadow-card hover:-translate-y-0.5",
+    link: "bg-transparent text-teal hover:text-teal-deep hover:underline p-0 h-auto font-medium [&_svg]:inline",
   }[variant];
 
   const combinedStyles = `${baseStyles} ${sizeStyles} ${variantStyles} ${className}`;

@@ -19,6 +19,9 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 
+import { SignalBadge } from "@/components/ui/SignalBadge";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
+
 export const metadata: Metadata = {
   title: "Invisible Devices | Unhackable Humans",
   description:
@@ -34,10 +37,13 @@ export default function InvisibleDevicesPage() {
         {/* Hero Section */}
         <Section variant="offwhite" spacing="spacious" className="border-b border-mint-border">
           <Container>
-            <div className="max-w-3xl space-y-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-mint text-teal-deep border border-mint-border">
-                Project Invisible Devices
-              </span>
+            <ScrollReveal className="max-w-3xl space-y-6">
+              <div className="flex items-center gap-2.5">
+                <SignalBadge number="06" label="HARDWARE PROTOCOL" />
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
+                  INVISIBLE DEVICES // 06
+                </span>
+              </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy tracking-tight leading-tight">
                 What happens to the device you stop using?
@@ -50,13 +56,13 @@ export default function InvisibleDevicesPage() {
               <div className="pt-2">
                 <Link
                   href="/digital-exit"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-btn bg-teal text-white font-semibold text-base hover:bg-teal-deep transition-all duration-200 hover:-translate-y-0.5 shadow-sm active:translate-y-0"
+                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-btn bg-teal text-white font-semibold text-base hover:bg-teal-deep transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-[0_4px_16px_rgba(27,127,121,0.28)] active:scale-[0.98]"
                 >
                   <span>Launch Digital Exit Assistant</span>
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1.5" />
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
           </Container>
         </Section>
 
