@@ -8,8 +8,6 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { getAllProjects } from "@/lib/content";
-
-import { SignalBadge } from "@/components/ui/SignalBadge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -43,12 +41,9 @@ export default function OurWorkPage() {
         <Section variant="offwhite" spacing="compact" className="border-b border-mint-border">
           <Container>
             <ScrollReveal className="max-w-3xl space-y-4">
-              <div className="flex items-center gap-2.5">
-                <SignalBadge number="03" label="CIVIC INITIATIVES" />
-                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
-                  CIVIC IMPACT // 03
-                </span>
-              </div>
+              <p className="text-xs uppercase tracking-widest font-semibold text-teal">
+                Civic Initiatives • Actionable Interventions
+              </p>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight">
                 Where human security becomes action.
               </h1>
@@ -68,17 +63,13 @@ export default function OurWorkPage() {
                   key={proj.id}
                   className="rounded-card border border-mint-border bg-white shadow-card overflow-hidden uh-card-hover group relative p-6 md:p-10"
                 >
-                  <div
-                    aria-hidden="true"
-                    className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  />
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Media Column (Placeholder per Hard Rule 1) */}
                     <div className="lg:col-span-4">
                       <div className="aspect-[4/3] rounded-xl bg-offwhite border border-dashed border-slate/30 flex flex-col items-center justify-center p-6 text-center space-y-2">
                         <Wrench className="w-8 h-8 text-teal" />
-                        <span className="font-mono text-xs font-semibold text-slate uppercase">
-                          [PLACEHOLDER: {proj.title} Media Graphic]
+                        <span className="text-xs font-semibold text-navy uppercase tracking-wider">
+                          {proj.title} Media Graphic
                         </span>
                         <p className="text-[11px] text-slate/70">
                           Documentary or architectural visualization.

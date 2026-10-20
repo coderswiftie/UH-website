@@ -19,7 +19,6 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 
-import { SignalBadge } from "@/components/ui/SignalBadge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -38,12 +37,9 @@ export default function InvisibleDevicesPage() {
         <Section variant="offwhite" spacing="spacious" className="border-b border-mint-border">
           <Container>
             <ScrollReveal className="max-w-3xl space-y-6">
-              <div className="flex items-center gap-2.5">
-                <SignalBadge number="06" label="HARDWARE PROTOCOL" />
-                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
-                  INVISIBLE DEVICES // 06
-                </span>
-              </div>
+              <p className="text-xs uppercase tracking-widest font-semibold text-teal">
+                Project Invisible Devices • Hardware Circularity
+              </p>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy tracking-tight leading-tight">
                 What happens to the device you stop using?

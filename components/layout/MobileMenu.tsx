@@ -60,13 +60,13 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
           onClick={onClose}
           className="flex items-center gap-2.5 group select-none"
         >
-          <div className="relative w-8 h-8 shrink-0">
+          <div className="relative w-9 h-9 shrink-0">
             <Image
-              src="/images/uh-shield-mark.png"
+              src="/images/uh-logo.svg"
               alt="Unhackable Humans Logo"
-              width={32}
-              height={32}
-              className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+              width={36}
+              height={36}
+              className="w-full h-full object-contain"
             />
           </div>
           <span className="text-lg font-extrabold tracking-tight text-white group-hover:text-teal-light transition-colors">
@@ -121,8 +121,8 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
           <span>Take Action</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
-        <p className="text-center text-[11px] font-mono text-white/50">
-          SIGNAL // DIGITAL EXIT ASSISTANT
+        <p className="text-center text-xs text-white/60">
+          Digital Exit Assistant • Circular Tech
         </p>
       </div>
     </div>

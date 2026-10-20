@@ -2,7 +2,6 @@ import React from "react";
 import { Quote } from "lucide-react";
 import { Container } from "../ui/Container";
 import { getApprovedTestimonials, MOCK_IMPACT_STATS } from "@/lib/content";
-import { SignalBadge } from "../ui/SignalBadge";
 import { ScrollReveal } from "../ui/ScrollReveal";
 
 export function TestimonialsSection() {
@@ -24,12 +23,9 @@ export function TestimonialsSection() {
         )}
 
         <ScrollReveal className="max-w-2xl mb-14 space-y-3">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <SignalBadge number="05" label="FIELD EVIDENCE" />
-            <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
-              COMMUNITY EVIDENCE // 05
-            </span>
-          </div>
+          <p className="text-xs uppercase tracking-widest font-semibold text-teal">
+            Community Evidence • Direct Voices
+          </p>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
             Real experiences from community participants.
@@ -46,10 +42,6 @@ export function TestimonialsSection() {
               delay={idx * 100}
               className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between shadow-subtle hover:border-teal/50 hover:bg-white uh-card-hover relative overflow-hidden"
             >
-              <div
-                aria-hidden="true"
-                className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-              />
 
               <div className="space-y-4">
                 <Quote className="w-8 h-8 text-teal/40 transition-transform duration-200 group-hover:scale-110 group-hover:text-teal" />

@@ -45,15 +45,15 @@ export function Navbar() {
           <Link
             href="/"
             aria-label="Unhackable Humans Homepage"
-            className="flex items-center gap-2.5 sm:gap-3 group select-none"
+            className="flex items-center gap-3 group select-none py-1"
           >
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 transition-transform duration-200 group-hover:scale-105">
               <Image
-                src="/images/uh-shield-mark.png"
-                alt="Unhackable Humans Logo"
-                width={36}
-                height={36}
-                className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(18,38,58,0.12)]"
+                src="/images/uh-logo.svg"
+                alt="Unhackable Humans Emblem"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
                 priority
               />
             </div>
@@ -61,7 +61,7 @@ export function Navbar() {
               <span className="font-extrabold text-base sm:text-lg tracking-tight text-navy group-hover:text-teal transition-colors leading-tight">
                 Unhackable Humans
               </span>
-              <span className="hidden sm:inline-block text-[10px] font-mono uppercase tracking-widest text-slate/70">
+              <span className="hidden sm:inline-block text-[10px] uppercase tracking-wider font-semibold text-slate/75">
                 Human Security Lab
               </span>
             </div>

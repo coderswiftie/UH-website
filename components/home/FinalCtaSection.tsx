@@ -3,16 +3,15 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Handshake } from "lucide-react";
 import { Container } from "../ui/Container";
 import { ScrollReveal } from "../ui/ScrollReveal";
-import { SignalBadge } from "../ui/SignalBadge";
 
 export function FinalCtaSection() {
   return (
     <section className="relative py-20 md:py-28 bg-mint border-b border-mint-border overflow-hidden">
       <Container className="relative z-10">
         <ScrollReveal className="max-w-3xl mx-auto text-center space-y-6">
-          <div className="flex justify-center">
-            <SignalBadge number="07" label="CIVIC PARTICIPATION" />
-          </div>
+          <p className="text-xs uppercase tracking-widest font-semibold text-teal">
+            Civic Participation • Action
+          </p>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-navy tracking-tight leading-tight">
             Stay informed. Stay harder to manipulate.

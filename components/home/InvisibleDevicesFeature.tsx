@@ -1,30 +1,19 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Cpu, Laptop, RefreshCw, ShieldCheck, Smartphone } from "lucide-react";
+import { ArrowRight, Cpu, Laptop, ShieldCheck, Smartphone } from "lucide-react";
 import { Container } from "../ui/Container";
-import { SignalBadge } from "../ui/SignalBadge";
 import { ScrollReveal } from "../ui/ScrollReveal";
 
 export function InvisibleDevicesFeature() {
   return (
     <section className="py-20 md:py-28 bg-navy text-white relative overflow-hidden border-b border-navy-dark">
-      {/* Background subtle glow */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 right-1/4 w-96 h-96 bg-teal/10 rounded-full blur-3xl pointer-events-none"
-      />
-
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Mission & Problem */}
           <ScrollReveal className="lg:col-span-7 space-y-6">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <SignalBadge number="06" label="HARDWARE PROTOCOL" theme="dark" />
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-teal-light text-xs font-semibold uppercase tracking-wider">
-                <RefreshCw className="w-3.5 h-3.5" />
-                <span>Project Invisible Devices</span>
-              </div>
-            </div>
+            <p className="text-xs uppercase tracking-widest font-semibold text-teal-light">
+              Project Invisible Devices • Hardware Circularity
+            </p>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
               What happens to the device you stop using?
@@ -51,15 +40,15 @@ export function InvisibleDevicesFeature() {
 
           {/* Right Column: Split Visual + Highlights */}
           <ScrollReveal delay={120} className="lg:col-span-5">
-            <div className="group rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm space-y-6 transition-all duration-300 hover:border-teal/40 hover:bg-white/[0.07] hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
+            <div className="group rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-sm space-y-6 transition-all duration-300 hover:border-teal/40 hover:bg-white/[0.07]">
               <div className="aspect-[4/3] rounded-xl bg-navy-dark/60 border border-dashed border-white/20 flex flex-col items-center justify-center p-6 text-center space-y-3 transition-transform duration-300 group-hover:scale-[1.01]">
                 <div className="flex items-center gap-3 text-teal-light">
                   <Smartphone className="w-6 h-6 transition-transform duration-200 group-hover:-translate-y-0.5" />
                   <Laptop className="w-7 h-7 transition-transform duration-200 group-hover:-translate-y-0.5" />
                   <Cpu className="w-6 h-6 transition-transform duration-200 group-hover:-translate-y-0.5" />
                 </div>
-                <span className="font-mono text-xs uppercase font-semibold text-white/80">
-                  [PLACEHOLDER: Physical Device Ecosystem Diagram]
+                <span className="text-xs uppercase tracking-wider font-semibold text-white/90">
+                  Hardware Lifecycle Ecosystem
                 </span>
                 <p className="text-[11px] text-white/60 max-w-xs">
                   Transparent decision trees: Repair first, pass it forward, or recover rare earth minerals.

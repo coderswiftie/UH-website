@@ -33,13 +33,6 @@ export function Card({
       className={`${baseStyles} ${variantStyles} ${hoverStyles} ${paddingStyles} ${className}`}
       {...props}
     >
-      {/* Subtle top teal accent line on hover */}
-      {hoverEffect && (
-        <div
-          aria-hidden="true"
-          className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-        />
-      )}
       {children}
     </div>
   );

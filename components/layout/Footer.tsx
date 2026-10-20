@@ -15,11 +15,11 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 group select-none">
               <div className="relative w-9 h-9 shrink-0 transition-transform duration-200 group-hover:scale-105 opacity-90 group-hover:opacity-100">
                 <Image
-                  src="/images/uh-shield-mark.png"
+                  src="/images/uh-logo.svg"
                   alt="Unhackable Humans Logo"
                   width={36}
                   height={36}
-                  className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <span className="text-xl font-extrabold tracking-tight text-white group-hover:text-teal-light transition-colors">

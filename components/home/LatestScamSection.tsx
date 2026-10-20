@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight, Calendar, FileText, Tag } from "lucide-react";
 import { Container } from "../ui/Container";
 import { getAllScams, getLatestScam } from "@/lib/content";
-import { SignalBadge } from "../ui/SignalBadge";
 import { ScrollReveal } from "../ui/ScrollReveal";
 
 export function LatestScamSection() {
@@ -15,12 +14,9 @@ export function LatestScamSection() {
       <Container>
         <ScrollReveal className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div className="space-y-2">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <SignalBadge number="04" label="CASE EVIDENCE" />
-              <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
-                INVESTIGATIVE ARCHIVE // 04
-              </span>
-            </div>
+            <p className="text-xs uppercase tracking-widest font-semibold text-teal">
+              Investigative Archive • Case Evidence
+            </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
               Latest Scam Breakdown
             </h2>
@@ -37,21 +33,16 @@ export function LatestScamSection() {
 
         {/* Featured Main Story Card */}
         <ScrollReveal className="group rounded-card border border-mint-border bg-white shadow-card p-6 md:p-10 mb-8 uh-card-hover relative overflow-hidden">
-          <div
-            aria-hidden="true"
-            className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-          />
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Visual Column */}
             <div className="lg:col-span-5">
               <div className="aspect-[4/3] rounded-xl bg-offwhite border border-dashed border-slate/30 flex flex-col items-center justify-center p-6 text-center space-y-2 transition-transform duration-300 group-hover:scale-[1.01]">
                 <FileText className="w-8 h-8 text-teal transition-transform duration-200 group-hover:scale-110" />
-                <span className="font-mono text-xs font-semibold text-slate uppercase">
-                  [PLACEHOLDER: Case Visual / Redacted Evidence]
+                <span className="text-xs font-semibold text-navy uppercase tracking-wider">
+                  Case Evidence Dossier
                 </span>
                 <p className="text-[11px] text-slate/70">
-                  Documentary representation of deceptive communications.
+                  Documentary deconstruction of deceptive communications.
                 </p>
               </div>
             </div>
@@ -110,11 +101,6 @@ export function LatestScamSection() {
               delay={idx * 100}
               className="group p-6 rounded-card border border-mint-border bg-white uh-card-hover flex flex-col justify-between relative overflow-hidden"
             >
-              <div
-                aria-hidden="true"
-                className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-              />
-
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs text-slate">
                   <span className="font-semibold text-teal">{scam.category}</span>

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "../ui/Container";
 import { getAllProjects } from "@/lib/content";
-import { SignalBadge } from "../ui/SignalBadge";
 import { ScrollReveal } from "../ui/ScrollReveal";
 
 export function WorkSection() {
@@ -14,12 +13,9 @@ export function WorkSection() {
       <Container>
         <ScrollReveal className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div className="max-w-2xl space-y-3">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <SignalBadge number="03" label="CIVIC ACTION" />
-              <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
-                ACTIVE INITIATIVES // 03
-              </span>
-            </div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+              Civic Action
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
               Where human security becomes action.
             </h2>
@@ -41,19 +37,15 @@ export function WorkSection() {
           {projects.map((proj, idx) => (
             <ScrollReveal
               key={proj.id}
-              delay={idx * 100}
-              className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between hover:border-teal/50 hover:bg-white uh-card-hover relative overflow-hidden"
+              delay={idx * 80}
+              className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between hover:border-teal/40 hover:bg-white transition-all duration-200 relative"
             >
-              <div
-                aria-hidden="true"
-                className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-teal/0 via-teal to-teal/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-              />
 
               <div className="space-y-4">
                 {/* Visual Placeholder */}
                 <div className="aspect-[16/9] w-full rounded-xl bg-white border border-dashed border-slate/20 flex flex-col items-center justify-center p-4 text-center transition-transform duration-300 group-hover:scale-[1.01]">
-                  <span className="font-mono text-xs uppercase font-semibold text-slate">
-                    [PLACEHOLDER: {proj.title} Media Graphic]
+                  <span className="text-xs uppercase tracking-wider font-semibold text-navy">
+                    {proj.title} Graphic
                   </span>
                 </div>
 

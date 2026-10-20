@@ -126,26 +126,26 @@ export function HeroBackground() {
         // Draw node dot
         ctx.beginPath();
         ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(27, 127, 121, 0.28)";
+        ctx.fillStyle = "rgba(27, 127, 121, 0.18)";
         ctx.fill();
 
-        // Draw node pulse halo
+        // Draw node subtle halo
         ctx.beginPath();
-        ctx.arc(a.x, a.y, a.radius * 2.2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(27, 127, 121, 0.05)";
+        ctx.arc(a.x, a.y, a.radius * 2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(27, 127, 121, 0.03)";
         ctx.fill();
 
         // Draw floating psychological labels
         if (a.label) {
-          ctx.font = "600 10px monospace";
-          ctx.fillStyle = "rgba(20, 92, 88, 0.28)";
+          ctx.font = "500 9px sans-serif";
+          ctx.fillStyle = "rgba(20, 92, 88, 0.20)";
           ctx.fillText(a.label, a.x + 8, a.y - 6);
 
           // Tiny pointer line
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
-          ctx.lineTo(a.x + 6, a.y - 6);
-          ctx.strokeStyle = "rgba(27, 127, 121, 0.2)";
+          ctx.lineTo(a.x + 5, a.y - 5);
+          ctx.strokeStyle = "rgba(27, 127, 121, 0.12)";
           ctx.lineWidth = 1;
           ctx.stroke();
         }
@@ -156,7 +156,7 @@ export function HeroBackground() {
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
 
           if (dist < maxDistance) {
-            const alpha = (1 - dist / maxDistance) * 0.12;
+            const alpha = (1 - dist / maxDistance) * 0.07;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
