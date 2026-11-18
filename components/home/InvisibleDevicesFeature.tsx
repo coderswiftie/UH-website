@@ -1,87 +1,82 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, RefreshCw, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Container } from "../ui/Container";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { YearlyInvestigationTabs } from "../invisible-devices/YearlyInvestigationTabs";
 
 export function InvisibleDevicesFeature() {
   return (
-    <section className="py-20 md:py-28 bg-navy text-white relative overflow-hidden border-b border-navy-dark">
-      {/* Subtle background ambient mesh glow */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-teal/10 rounded-full blur-3xl pointer-events-none" />
-
-      <Container className="relative z-10">
+    <section className="py-20 md:py-28 bg-navy text-white border-b border-navy-dark">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* Left Column: Mission & Problem */}
+          {/* Left Column */}
           <ScrollReveal className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-teal-light text-xs font-semibold uppercase tracking-wider">
-              <RefreshCw className="w-3.5 h-3.5" />
-              <span>Project Invisible Devices</span>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-light">
+              Project Invisible Devices
+            </p>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white tracking-tight leading-[1.12]">
               What happens to the device you stop using?
             </h2>
 
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-              Millions of retired smartphones, laptops, and chargers sit forgotten in drawers due to confusion over data wiping and safe disposal.
+            <p className="text-base text-white/80 leading-relaxed">
+              Millions of retired phones, laptops, and chargers sit forgotten in drawers because people aren&apos;t sure how to wipe their personal data or dispose of them safely.
             </p>
 
             <p className="text-sm text-white/70 leading-relaxed">
-              When hardware stays hidden, critical minerals are locked away, functional devices fail to reach underprivileged communities, and personal data remains at risk. The Digital Exit assistant offers a transparent, rule-based path forward.
+              When usable electronics stay idle, critical minerals stay locked away and working devices never reach communities that could use them. Our Digital Exit assistant walks you through repair, reuse, donation, or recycling step by step.
             </p>
 
-            {/* Circularity Pathways List */}
-            <div className="grid grid-cols-2 gap-2.5 pt-1">
-              <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-[10px] font-mono text-teal-light font-bold block">01 // REPAIR</span>
-                <span className="text-xs text-white font-medium block mt-0.5">Extend Life</span>
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-3 pt-4 border-t border-white/10 text-xs">
+              <div>
+                <dt className="font-semibold text-teal-light">Repair</dt>
+                <dd className="text-white/70 mt-0.5">Extend usable life</dd>
               </div>
-              <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-[10px] font-mono text-teal-light font-bold block">02 // REUSE</span>
-                <span className="text-xs text-white font-medium block mt-0.5">Pass Forward</span>
+              <div>
+                <dt className="font-semibold text-teal-light">Reuse</dt>
+                <dd className="text-white/70 mt-0.5">Repurpose or pass on</dd>
               </div>
-              <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-[10px] font-mono text-teal-light font-bold block">03 // DONATE</span>
-                <span className="text-xs text-white font-medium block mt-0.5">Empower Students</span>
+              <div>
+                <dt className="font-semibold text-teal-light">Donate</dt>
+                <dd className="text-white/70 mt-0.5">Support learners</dd>
               </div>
-              <div className="p-2.5 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-[10px] font-mono text-teal-light font-bold block">04 // RECYCLE</span>
-                <span className="text-xs text-white font-medium block mt-0.5">Certified E-Waste</span>
+              <div>
+                <dt className="font-semibold text-teal-light">Recycle</dt>
+                <dd className="text-white/70 mt-0.5">Certified e-waste recovery</dd>
               </div>
-            </div>
+            </dl>
 
-            <div className="pt-2 flex flex-wrap items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/digital-exit"
-                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-[0_4px_18px_rgba(27,127,121,0.4)] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-colors shadow-sm"
               >
                 <span>Find Your Digital Exit</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/invisible-devices"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-btn bg-white/10 text-white font-semibold text-sm hover:bg-white/20 transition-all border border-white/15"
+                className="text-sm font-semibold text-white/85 hover:text-teal-light transition-colors py-2"
               >
-                <span>Full Initiative</span>
+                Explore the initiative →
               </Link>
             </div>
 
-            <div className="pt-4 space-y-2.5 border-t border-white/10">
-              <div className="flex items-start gap-2.5 text-xs text-white/75">
+            <div className="pt-4 space-y-2 border-t border-white/10 text-xs text-white/70">
+              <div className="flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-teal-light shrink-0 mt-0.5" />
-                <span>Prioritizes device-specific data wiping before transfer or disposal.</span>
+                <span>Device-specific data wiping steps come before every disposal option.</span>
               </div>
-              <div className="flex items-start gap-2.5 text-xs text-white/75">
+              <div className="flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-teal-light shrink-0 mt-0.5" />
-                <span>100% rule-based and private; zero personal data or serial numbers logged.</span>
+                <span>Private and rule-based — no logins, accounts, or serial numbers collected.</span>
               </div>
             </div>
           </ScrollReveal>
 
           {/* Right Column: Yearly Investigation Tabs */}
-          <ScrollReveal delay={120} className="lg:col-span-7">
+          <ScrollReveal delay={80} className="lg:col-span-7">
             <YearlyInvestigationTabs theme="dark" />
           </ScrollReveal>
         </div>

@@ -1,11 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
-import { CheckCircle2, Quote, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
 import { getApprovedTestimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function TestimonialsPage() {
-  // CRITICAL RULE: Render ONLY entries with approvalStatus === "approved"
+  // Render ONLY entries with approvalStatus === "approved"
   const approvedTestimonials = getApprovedTestimonials();
 
   return (
@@ -24,63 +23,62 @@ export default function TestimonialsPage() {
 
       <main className="flex-1">
         {/* Header */}
-        <Section variant="offwhite" spacing="compact" className="border-b border-mint-border">
+        <Section
+          variant="offwhite"
+          spacing="compact"
+          className="border-b border-mint-border"
+        >
           <Container>
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
                 Community Feedback
-              </span>
+              </p>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight">
-                Verified Testimonials.
+                Participant Testimonials.
               </h1>
               <p className="text-base text-slate leading-relaxed">
-                We believe in ethical proof. Testimonials and feedback are published solely from consented participants in our community workshops and awareness programs.
+                Every reflection below comes from participants who attended our workshops or programs and gave explicit consent to be quoted.
               </p>
             </div>
           </Container>
         </Section>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials */}
         <Section variant="white" spacing="default">
           <Container>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {approvedTestimonials.map((t) => (
-                <Card
+                <article
                   key={t.id}
-                  variant="offwhite"
-                  className="space-y-6 flex flex-col justify-between"
+                  className="border-t-2 border-mint-border pt-7 flex flex-col justify-between space-y-6"
                 >
-                  <div className="space-y-4">
-                    <Quote className="w-8 h-8 text-teal/40" />
-                    <blockquote className="text-base sm:text-lg text-ink font-medium leading-relaxed italic">
-                      {t.quote}
-                    </blockquote>
-                  </div>
+                  <blockquote className="text-base sm:text-lg text-ink leading-relaxed">
+                    {t.quote}
+                  </blockquote>
 
-                  <div className="pt-4 border-t border-mint-border flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-4 text-xs">
                     <div>
                       <h2 className="font-bold text-navy text-sm">
                         {t.nameOrDescriptor}
                       </h2>
-                      <span className="text-xs text-slate block">{t.context}</span>
+                      <span className="text-slate block mt-0.5">{t.context}</span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-teal text-xs font-semibold">
+                    <div className="flex items-center gap-1 text-teal font-medium shrink-0">
                       <ShieldCheck className="w-4 h-4" />
-                      <span>Verified</span>
+                      <span>Consented</span>
                     </div>
                   </div>
-                </Card>
+                </article>
               ))}
             </div>
 
-            {/* Consent Policy Callout */}
-            <div className="mt-14 max-w-2xl mx-auto p-6 rounded-card bg-mint/50 border border-mint-border text-center text-xs text-slate space-y-1">
+            <div className="mt-16 pt-8 border-t border-mint-border max-w-2xl text-xs text-slate leading-relaxed space-y-1">
               <strong className="text-navy block font-semibold">
-                Testimonial Governance &amp; Ethics:
+                Our publishing standard
               </strong>
               <p>
-                We never fabricate endorsements or publish quotes without recorded participant consent. Pending submissions remain strictly quarantined in our review pipeline until explicit permission is signed.
+                We never fabricate endorsements or publish feedback without recorded permission. Unverified submissions stay unpublished until consent is confirmed.
               </p>
             </div>
           </Container>

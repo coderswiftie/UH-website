@@ -10,18 +10,18 @@ export function WorkSection() {
   const projects = getAllProjects();
 
   return (
-    <section className="py-20 md:py-28 bg-white border-b border-mint-border">
+    <section className="py-20 md:py-28 bg-white border-y border-mint-border">
       <Container>
         <ScrollReveal className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div className="max-w-2xl space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-teal">
-              Civic Action
-            </span>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+              Our Work
+            </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
               Where human security becomes action.
             </h2>
             <p className="text-base text-slate leading-relaxed">
-              We focus solely on substantiateable interventions where psychological insight produces tangible civic impact.
+              Practical initiatives built around how people actually respond to digital pressure, risk, and everyday technology decisions.
             </p>
           </div>
 
@@ -34,86 +34,66 @@ export function WorkSection() {
           </Link>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
           {projects.map((proj, idx) => (
             <ScrollReveal
               key={proj.id}
-              delay={idx * 60}
-              className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between hover:border-teal/40 hover:bg-white transition-all duration-300 shadow-subtle hover:shadow-card relative overflow-hidden"
+              delay={(idx % 2) * 60}
+              className="group flex flex-col justify-between space-y-5"
             >
               <div className="space-y-5">
-                {/* Visual Media Graphic */}
-                <div className="transition-transform duration-300 group-hover:scale-[1.01]">
-                  <ProjectSchematic
-                    projectId={proj.id}
-                    media={proj.media}
-                    title={proj.title}
-                  />
-                </div>
+                <ProjectSchematic
+                  projectId={proj.id}
+                  media={proj.media}
+                  title={proj.title}
+                />
 
-                <div className="flex items-center justify-between pt-1">
-                  <h3 className="text-xl font-bold text-navy tracking-tight group-hover:text-teal transition-colors">
-                    {proj.title}
-                  </h3>
-                  <span
-                    className={`text-[10px] font-mono font-semibold uppercase px-2.5 py-0.5 rounded-full ${
-                      proj.status === "ongoing"
-                        ? "bg-teal/10 text-teal-deep border border-teal/20"
-                        : "bg-slate/10 text-slate border border-slate/20"
-                    }`}
-                  >
-                    {proj.status}
-                  </span>
-                </div>
-
-                <p className="text-sm text-navy/90 font-medium leading-relaxed">
-                  {proj.summary}
-                </p>
-
-                {/* 3 Core Aspects: Problem, Intervention, Beneficiary */}
-                <div className="space-y-2.5 pt-1 text-xs">
-                  <div className="p-3 rounded-lg bg-white border border-mint-border/80 space-y-1">
-                    <span className="font-mono text-[10px] uppercase font-bold text-navy block">
-                      The Problem:
+                <div className="space-y-2">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-xl font-bold text-navy tracking-tight group-hover:text-teal transition-colors">
+                      {proj.title}
+                    </h3>
+                    <span className="text-xs font-medium capitalize text-slate shrink-0">
+                      {proj.status}
                     </span>
-                    <p className="text-slate leading-relaxed">
-                      {proj.problem}
-                    </p>
                   </div>
 
-                  <div className="p-3 rounded-lg bg-white border border-mint-border/80 space-y-1">
-                    <span className="font-mono text-[10px] uppercase font-bold text-teal-deep block">
-                      What UH Does:
-                    </span>
-                    <p className="text-slate leading-relaxed">
-                      {proj.intervention}
-                    </p>
-                  </div>
+                  <p className="text-sm text-ink/90 leading-relaxed">
+                    {proj.summary}
+                  </p>
+                </div>
 
+                {/* Clean editorial definition list — no nested boxes */}
+                <dl className="space-y-3 pt-4 border-t border-mint-border text-xs leading-relaxed">
+                  <div>
+                    <dt className="font-semibold text-navy inline">Problem: </dt>
+                    <dd className="text-slate inline">{proj.problem}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-teal-deep inline">
+                      What we do:{" "}
+                    </dt>
+                    <dd className="text-slate inline">{proj.intervention}</dd>
+                  </div>
                   {proj.beneficiary && (
-                    <div className="p-2.5 rounded-lg bg-mint/50 border border-teal/20 space-y-0.5">
-                      <span className="font-mono text-[10px] uppercase font-bold text-teal block">
-                        Who Benefits:
-                      </span>
-                      <p className="text-slate/90 leading-relaxed font-medium">
-                        {proj.beneficiary}
-                      </p>
+                    <div>
+                      <dt className="font-semibold text-navy inline">
+                        Who it helps:{" "}
+                      </dt>
+                      <dd className="text-slate inline">{proj.beneficiary}</dd>
                     </div>
                   )}
-                </div>
+                </dl>
               </div>
 
-              <div className="pt-6 border-t border-mint-border/80 mt-6 flex items-center justify-between">
+              <div className="pt-4 border-t border-mint-border">
                 <Link
                   href={proj.cta?.href || "/our-work"}
-                  className="group/btn inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-teal-deep transition-colors"
+                  className="group/btn inline-flex items-center gap-1.5 text-sm font-semibold text-teal hover:text-teal-deep transition-colors"
                 >
                   <span>{proj.cta?.label || "Explore Initiative"}</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                 </Link>
-                <span className="text-[11px] font-mono text-slate/50">
-                  UH // CIVIC ACTION
-                </span>
               </div>
             </ScrollReveal>
           ))}

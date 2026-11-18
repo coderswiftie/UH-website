@@ -1,5 +1,4 @@
 import React from "react";
-import { Quote } from "lucide-react";
 import { Container } from "../ui/Container";
 import { getApprovedTestimonials, MOCK_IMPACT_STATS } from "@/lib/content";
 import { ScrollReveal } from "../ui/ScrollReveal";
@@ -10,7 +9,7 @@ export function TestimonialsSection() {
   return (
     <section className="py-20 md:py-28 bg-white border-y border-mint-border">
       <Container>
-        {/* Render impact stats ONLY if verified data is supplied per Hard Rule 1 */}
+        {/* Render impact stats ONLY if verified data is supplied */}
         {MOCK_IMPACT_STATS.verified && MOCK_IMPACT_STATS.items && (
           <ScrollReveal className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 pb-12 border-b border-mint-border">
             {MOCK_IMPACT_STATS.items.map((stat, idx) => (
@@ -23,45 +22,37 @@ export function TestimonialsSection() {
         )}
 
         <ScrollReveal className="max-w-2xl mb-14 space-y-3">
-          <p className="text-xs uppercase tracking-widest font-semibold text-teal">
-            Community Evidence • Direct Voices
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+            Community Voices
           </p>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
-            Real experiences from community participants.
+            What workshop participants say.
           </h2>
-          <p className="text-sm text-slate leading-relaxed">
-            We publish testimonials only with recorded, explicit consent. All descriptors reflect verified workshop and program attendees.
+          <p className="text-sm sm:text-base text-slate leading-relaxed">
+            We publish participant feedback only with explicit, recorded consent.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14">
           {testimonials.map((t, idx) => (
             <ScrollReveal
               key={t.id}
-              delay={idx * 100}
-              className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between shadow-subtle hover:border-teal/50 hover:bg-white uh-card-hover relative overflow-hidden"
+              delay={idx * 60}
+              className="border-t border-mint-border pt-7 flex flex-col justify-between space-y-6"
             >
+              <blockquote className="text-base sm:text-lg text-ink leading-relaxed">
+                {t.quote}
+              </blockquote>
 
-              <div className="space-y-4">
-                <Quote className="w-8 h-8 text-teal/40 transition-transform duration-200 group-hover:scale-110 group-hover:text-teal" />
-                <p className="text-base sm:text-lg text-ink font-medium leading-relaxed italic">
-                  {t.quote}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-mint-border/80 flex items-center justify-between">
+              <div className="flex items-baseline justify-between gap-4 text-xs">
                 <div>
-                  <h3 className="font-bold text-navy text-sm group-hover:text-teal transition-colors">
+                  <p className="font-semibold text-navy text-sm">
                     {t.nameOrDescriptor}
-                  </h3>
-                  <p className="text-xs text-slate">
-                    {t.context}
                   </p>
+                  <p className="text-slate mt-0.5">{t.context}</p>
                 </div>
-                <span className="text-[11px] font-mono text-slate/70">
-                  {t.date}
-                </span>
+                <span className="text-slate/70 shrink-0">{t.date}</span>
               </div>
             </ScrollReveal>
           ))}

@@ -5,8 +5,6 @@ import {
   ArrowRight,
   BatteryCharging,
   Cpu,
-  HelpCircle,
-  Laptop,
   Recycle,
   ShieldAlert,
   ShieldCheck,
@@ -17,9 +15,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
 import { YearlyInvestigationTabs } from "@/components/invisible-devices/YearlyInvestigationTabs";
-
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -34,47 +30,55 @@ export default function InvisibleDevicesPage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <Section variant="offwhite" spacing="spacious" className="border-b border-mint-border">
+        {/* Hero */}
+        <Section
+          variant="offwhite"
+          spacing="spacious"
+          className="border-b border-mint-border"
+        >
           <Container>
             <ScrollReveal className="max-w-3xl space-y-6">
-              <p className="text-xs uppercase tracking-widest font-semibold text-teal">
-                Project Invisible Devices • Hardware Circularity
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+                Project Invisible Devices
               </p>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-navy tracking-tight leading-[1.1]">
                 What happens to the device you stop using?
               </h1>
 
-              <p className="text-lg sm:text-xl text-slate leading-relaxed">
-                When people upgrade their technology, old phones, tablets, and laptops rarely get recycled or donated immediately. Instead, they become &ldquo;invisible&rdquo;—banished to desk drawers for years due to data security anxiety and lack of clear guidance. Project Invisible Devices helps people navigate responsible next steps across repair, reuse, donation, and certified recycling.
+              <p className="text-base sm:text-lg text-slate leading-relaxed">
+                When people upgrade, old phones, tablets, and laptops rarely get recycled or passed on right away. Instead, they stay tucked away in drawers for years because wiping personal data feels risky and next steps aren&apos;t clear. Project Invisible Devices guides people safely through repair, reuse, donation, and certified recycling.
               </p>
 
               <div className="pt-2">
                 <Link
                   href="/digital-exit"
-                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-btn bg-teal text-white font-semibold text-base hover:bg-teal-deep transition-all duration-200 hover:-translate-y-0.5 shadow-sm hover:shadow-[0_4px_16px_rgba(27,127,121,0.28)] active:scale-[0.98]"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm sm:text-base hover:bg-teal-deep transition-colors shadow-sm"
                 >
                   <span>Launch Digital Exit Assistant</span>
-                  <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1.5" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
             </ScrollReveal>
           </Container>
         </Section>
 
-        {/* 2026 Investigation Section */}
-        <Section variant="white" spacing="default" className="border-b border-mint-border">
+        {/* 2026 Investigation */}
+        <Section
+          variant="white"
+          spacing="default"
+          className="border-b border-mint-border"
+        >
           <Container>
             <div className="max-w-3xl mb-10 space-y-3">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
                 Yearly Field Investigations
-              </span>
+              </p>
               <h2 className="text-3xl font-extrabold text-navy tracking-tight">
                 2026 Investigation Cohort
               </h2>
-              <p className="text-sm text-slate leading-relaxed">
-                For Invisible Devices, we conduct yearly investigations. In our 2026 cohort, 45 members mobilized across communities to investigate dormant tech, deconstruct data sanitization fears, and map verified circular hand-off routes.
+              <p className="text-sm sm:text-base text-slate leading-relaxed">
+                Each year, we run a community field investigation under Invisible Devices. In 2026, 45 cohort members audited dormant household electronics, addressed data-wiping fears, and mapped safe circular hand-off routes.
               </p>
             </div>
 
@@ -83,141 +87,129 @@ export default function InvisibleDevicesPage() {
         </Section>
 
         {/* The Three Hidden Problems */}
-        <Section variant="white" spacing="default" className="border-b border-mint-border">
+        <Section
+          variant="offwhite"
+          spacing="default"
+          className="border-b border-mint-border"
+        >
           <Container>
             <div className="max-w-2xl mb-14 space-y-3">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                The Cost of Stagnation
-              </span>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+                The Cost of Idle Hardware
+              </p>
               <h2 className="text-3xl font-extrabold text-navy tracking-tight">
                 Why unused electronics matter.
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card variant="offwhite" className="space-y-4">
-                <div className="w-10 h-10 rounded-lg bg-mint flex items-center justify-center text-teal">
-                  <ShieldAlert className="w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="border-t-2 border-navy pt-6 space-y-3">
+                <div className="flex items-center gap-2 text-teal">
+                  <ShieldAlert className="w-4 h-4" />
+                  <h3 className="text-lg font-bold text-navy">
+                    The Security Trap
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-navy">1. The Security Trap</h3>
                 <p className="text-sm text-slate leading-relaxed">
-                  People hesitate to recycle or give away electronics because they don&apos;t know how to wipe their personal files, photo albums, or passwords safely.
+                  People hold onto old devices because they aren&apos;t sure how to erase photos, saved accounts, and passwords completely before letting hardware go.
                 </p>
-              </Card>
+              </div>
 
-              <Card variant="offwhite" className="space-y-4">
-                <div className="w-10 h-10 rounded-lg bg-mint flex items-center justify-center text-teal">
-                  <BatteryCharging className="w-5 h-5" />
+              <div className="border-t-2 border-teal pt-6 space-y-3">
+                <div className="flex items-center gap-2 text-teal">
+                  <BatteryCharging className="w-4 h-4" />
+                  <h3 className="text-lg font-bold text-navy">
+                    Trapped Minerals
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold text-navy">2. Trapped Minerals</h3>
                 <p className="text-sm text-slate leading-relaxed">
-                  Billions of devices hoard cobalt, lithium, copper, and gold. When left in storage, these non-renewable elements never return to the circular supply chain.
+                  Idle phones and laptops lock away cobalt, lithium, copper, and gold — finite materials that never re-enter the supply chain while sitting in drawers.
                 </p>
-              </Card>
+              </div>
 
-              <Card variant="offwhite" className="space-y-4">
-                <div className="w-10 h-10 rounded-lg bg-mint flex items-center justify-center text-teal">
-                  <Cpu className="w-5 h-5" />
+              <div className="border-t-2 border-teal-deep pt-6 space-y-3">
+                <div className="flex items-center gap-2 text-teal">
+                  <Cpu className="w-4 h-4" />
+                  <h3 className="text-lg font-bold text-navy">Lost Utility</h3>
                 </div>
-                <h3 className="text-xl font-bold text-navy">3. Lost Utility</h3>
                 <p className="text-sm text-slate leading-relaxed">
-                  A laptop or tablet considered outdated by a power user can still empower a student, rural learner, or community center for years of digital literacy.
+                  A laptop or tablet that feels slow to a power user can still support a student, rural classroom, or community centre for years of learning.
                 </p>
-              </Card>
+              </div>
             </div>
           </Container>
         </Section>
 
-        {/* The Decision Pathway */}
-        <Section variant="offwhite" spacing="default" className="border-b border-mint-border">
+        {/* Four Pathways */}
+        <Section variant="white" spacing="default">
           <Container>
             <div className="max-w-2xl mb-14 space-y-3">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                Circularity Hierarchy
-              </span>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+                Decision Hierarchy
+              </p>
               <h2 className="text-3xl font-extrabold text-navy tracking-tight">
-                Four responsible pathways for unused technology.
+                Four responsible paths for retired devices.
               </h2>
-              <p className="text-sm text-slate">
-                Before letting obsolete hardware languish in storage, follow our structured circular decision hierarchy.
+              <p className="text-sm sm:text-base text-slate leading-relaxed">
+                Before letting old hardware gather dust, work down this order of priority — starting with extending life, and ending with certified material recovery.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-teal">
-                    <Wrench className="w-5 h-5" />
-                    <span className="font-bold text-navy text-base">1. Repair</span>
-                  </div>
-                  <p className="text-xs text-slate leading-relaxed">
-                    Fix minor faults such as battery degradation or cracked screens before considering replacement. Extending active lifespan by 2 years cuts carbon footprints significantly.
-                  </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="border-t border-mint-border pt-5 space-y-2.5">
+                <div className="flex items-center gap-2 text-teal">
+                  <Wrench className="w-4 h-4" />
+                  <h3 className="font-bold text-navy text-base">1. Repair</h3>
                 </div>
-                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
-                  Extend Lifespan
-                </span>
+                <p className="text-xs sm:text-sm text-slate leading-relaxed">
+                  Fix minor faults like worn batteries or cracked screens before replacing. Adding two years of use sharply lowers a device&apos;s environmental footprint.
+                </p>
               </div>
 
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-teal">
-                    <Smartphone className="w-5 h-5" />
-                    <span className="font-bold text-navy text-base">2. Reuse</span>
-                  </div>
-                  <p className="text-xs text-slate leading-relaxed">
-                    Repurpose functional devices within your household or workplace as secondary test beds, dedicated media controllers, or backup terminals.
-                  </p>
+              <div className="border-t border-mint-border pt-5 space-y-2.5">
+                <div className="flex items-center gap-2 text-teal">
+                  <Smartphone className="w-4 h-4" />
+                  <h3 className="font-bold text-navy text-base">2. Reuse</h3>
                 </div>
-                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
-                  Repurpose In-Place
-                </span>
+                <p className="text-xs sm:text-sm text-slate leading-relaxed">
+                  Repurpose working devices at home or work as a dedicated reader, backup phone, or secondary study machine.
+                </p>
               </div>
 
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-teal">
-                    <ShieldCheck className="w-5 h-5" />
-                    <span className="font-bold text-navy text-base">3. Donation</span>
-                  </div>
-                  <p className="text-xs text-slate leading-relaxed">
-                    Pass wiped hardware to verified educational charities, rural classrooms, and community centers to bridge the digital access gap.
-                  </p>
+              <div className="border-t border-mint-border pt-5 space-y-2.5">
+                <div className="flex items-center gap-2 text-teal">
+                  <ShieldCheck className="w-4 h-4" />
+                  <h3 className="font-bold text-navy text-base">3. Donate</h3>
                 </div>
-                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
-                  Social Utility
-                </span>
+                <p className="text-xs sm:text-sm text-slate leading-relaxed">
+                  Pass cleanly wiped hardware to verified educational charities, rural classrooms, and community organisations.
+                </p>
               </div>
 
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 text-teal">
-                    <Recycle className="w-5 h-5" />
-                    <span className="font-bold text-navy text-base">4. Recycling</span>
-                  </div>
-                  <p className="text-xs text-slate leading-relaxed">
-                    When hardware is non-functional or unrecoverable, channel it to certified e-waste handlers to recover critical rare-earth minerals safely.
-                  </p>
+              <div className="border-t border-mint-border pt-5 space-y-2.5">
+                <div className="flex items-center gap-2 text-teal">
+                  <Recycle className="w-4 h-4" />
+                  <h3 className="font-bold text-navy text-base">4. Recycle</h3>
                 </div>
-                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
-                  Material Recovery
-                </span>
+                <p className="text-xs sm:text-sm text-slate leading-relaxed">
+                  When a device is truly beyond repair, send it to certified e-waste recyclers so valuable minerals can be recovered safely.
+                </p>
               </div>
             </div>
 
             {/* Bottom Callout */}
-            <div className="mt-14 p-8 rounded-card bg-mint border border-mint-border flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="space-y-2">
+            <div className="mt-16 p-8 rounded-card bg-mint border border-mint-border flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-1.5 max-w-xl">
                 <h3 className="text-xl font-bold text-navy">
                   Ready to retire or repurpose an old device?
                 </h3>
-                <p className="text-sm text-slate">
-                  Use our step-by-step Digital Exit assistant for personalized data-sanitization checklists and circular recommendations.
+                <p className="text-sm text-ink/80">
+                  Use our step-by-step Digital Exit assistant for a device-specific wiping checklist and practical next step.
                 </p>
               </div>
               <Link
                 href="/digital-exit"
-                className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all shadow-sm"
+                className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-colors shadow-sm"
               >
                 <span>Find Your Digital Exit</span>
                 <ArrowRight className="w-4 h-4" />

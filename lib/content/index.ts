@@ -100,7 +100,7 @@ export const MOCK_SCAMS: ScamBreakdown[] = [
         "It is, “Have I independently established that this investigation and these instructions are genuine?”",
       ],
     },
-    coverImage: "/images/cases/case-4-visual.png",
+    coverImage: "/images/cases/case-4-visual.jpg",
     coverImageAlt:
       "Case 04 visual showing an incoming call claiming to be Mumbai Police, a forged Supreme Court document, a note reading ₹1,04,00,000 transferred to multiple accounts, and a news clipping of the Nagpur digital arrest scam.",
     relatedPosts: ["nashik-digital-arrest-case", "the-fraud-behind-the-fraud"],
@@ -187,7 +187,7 @@ export const MOCK_SCAMS: ScamBreakdown[] = [
         "For individuals, verification can interrupt a fraudulent transaction. For investigators, tracing the wider network can help identify other people allegedly involved in enabling it.",
       ],
     },
-    coverImage: "/images/cases/case-3-visual.png",
+    coverImage: "/images/cases/case-3-visual.jpg",
     coverImageAlt:
       "Case 03 visual illustrating a fake HCG gas bill payment link on WhatsApp alongside a customer bill, SIM cards, a note reading 'Routine tasks can hide real scams', and a news clipping about the arrest of two men supplying SIM cards.",
     relatedPosts: ["the-cost-of-a-fake-investigation", "nashik-digital-arrest-case"],
@@ -289,7 +289,7 @@ export const MOCK_SCAMS: ScamBreakdown[] = [
         "When critical services depend on digital infrastructure, protecting that infrastructure is part of protecting the people who depend on those services.",
       ],
     },
-    coverImage: "/images/cases/case-2-visual.png",
+    coverImage: "/images/cases/case-2-visual.jpg",
     coverImageAlt:
       "Case Breakdown 02 visual titled 'When a Cyberattack Reaches the Hospital Bed', showing a dark hospital room with a disrupted digital vitals monitor.",
     relatedPosts: ["nashik-digital-arrest-case", "the-fraud-behind-the-fraud"],
@@ -377,7 +377,7 @@ export const MOCK_SCAMS: ScamBreakdown[] = [
         "That is why digital safety is not only about recognising suspicious links or protecting passwords. It is also about knowing when to question a convincing claim.",
       ],
     },
-    coverImage: "/images/cases/case-1-visual.png",
+    coverImage: "/images/cases/case-1-visual.jpg",
     coverImageAlt:
       "Case 01 visual titled 'The Nashik Digital Arrest', depicting a senior citizen seated before a laptop displaying a fake police interrogation video call.",
     relatedPosts: [

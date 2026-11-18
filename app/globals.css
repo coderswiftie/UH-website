@@ -15,7 +15,7 @@
     --color-ink: #17202A;
     --color-slate: #52616B;
     --color-gold: #C59B45;
-    --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   html {
@@ -23,7 +23,6 @@
     scroll-padding-top: 80px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -34,29 +33,13 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Focus visible ring meeting WCAG AA */
+  /* Accessible focus ring */
   *:focus-visible {
     outline: 2px solid #1B7F79 !important;
     outline-offset: 2px !important;
   }
 
-  /* Custom discreet scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #F7F8F6;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #D1E7E3;
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #1B7F79;
-  }
-
-  /* Strict prefers-reduced-motion: disable non-essential motion while keeping layout intact */
+  /* Strict prefers-reduced-motion */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -76,17 +59,32 @@
   }
 }
 
+@keyframes uhFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer utilities {
+  .animate-fadeIn {
+    animation: uhFadeIn 0.24s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
   .subtle-border {
     border-color: rgba(18, 38, 58, 0.08);
   }
 
-  /* Unified Scroll Reveal System */
+  /* Lightweight Scroll Reveal — no permanent will-change layer bloat */
   .uh-reveal {
     opacity: 0;
-    transform: translate3d(0, 14px, 0);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
+    transform: translate3d(0, 10px, 0);
+    transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .uh-reveal.is-revealed {
@@ -94,53 +92,26 @@
     transform: translate3d(0, 0, 0);
   }
 
-  /* Stagger delays */
-  .uh-delay-1 { transition-delay: 50ms; }
-  .uh-delay-2 { transition-delay: 100ms; }
-  .uh-delay-3 { transition-delay: 150ms; }
-  .uh-delay-4 { transition-delay: 200ms; }
-  .uh-delay-5 { transition-delay: 250ms; }
-  .uh-delay-6 { transition-delay: 300ms; }
-
-  /* Premium Card Hover & Elevation */
+  /* Subtle hover elevation on pointer devices only */
   @media (hover: hover) and (pointer: fine) {
     .uh-card-hover {
-      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-                  background-color 0.32s ease;
-      will-change: transform, box-shadow;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.25s ease;
     }
     .uh-card-hover:hover {
-      transform: translate3d(0, -3px, 0);
-      box-shadow: 0 14px 32px -4px rgba(18, 38, 58, 0.08), 0 4px 12px -2px rgba(27, 127, 121, 0.05);
-      border-color: rgba(27, 127, 121, 0.35);
+      transform: translate3d(0, -2px, 0);
+      box-shadow: 0 10px 24px -6px rgba(18, 38, 58, 0.07),
+        0 3px 8px -2px rgba(27, 127, 121, 0.04);
+      border-color: rgba(27, 127, 121, 0.32);
     }
   }
 
-  /* Seamless section blend transitions */
-  .section-blend-top {
-    position: relative;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
-  .section-blend-top::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 32px;
-    background: linear-gradient(to bottom, rgba(18, 38, 58, 0.03), transparent);
-    pointer-events: none;
-  }
-
-  /* Faint architectural watermarks */
-  .watermark-text {
-    font-size: clamp(3rem, 10vw, 8rem);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    color: rgba(18, 38, 58, 0.03);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

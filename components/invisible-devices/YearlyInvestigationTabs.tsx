@@ -181,57 +181,49 @@ export function YearlyInvestigationTabs({
 
   return (
     <div
-      className={`rounded-2xl transition-all duration-200 overflow-hidden ${
+      className={`rounded-card overflow-hidden ${
         isDark
-          ? "bg-navy-dark/80 border border-white/15 text-white shadow-2xl backdrop-blur-md"
-          : "bg-white border border-mint-border text-navy shadow-card"
+          ? "bg-navy-dark border border-white/15 text-white shadow-card"
+          : "bg-white border border-mint-border text-navy shadow-subtle"
       } ${className}`}
     >
       {/* Header bar */}
       <div
         className={`p-4 sm:p-5 border-b flex flex-wrap items-center justify-between gap-3 ${
           isDark
-            ? "border-white/10 bg-white/[0.03]"
+            ? "border-white/10 bg-white/[0.02]"
             : "border-mint-border bg-offwhite/70"
         }`}
       >
-        <div className="flex items-center gap-2.5">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal"></span>
-          </span>
-          <div>
-            <h3 className="font-extrabold text-base tracking-tight flex items-center gap-2">
-              <span>2026 Investigation</span>
-              <span
-                className={`text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold ${
-                  isDark
-                    ? "bg-teal/20 text-teal-light border border-teal/30"
-                    : "bg-mint text-teal-deep border border-mint-border"
-                }`}
-              >
-                45 Members Cohort
-              </span>
-            </h3>
-            <p
-              className={`text-xs ${
-                isDark ? "text-white/60" : "text-slate"
+        <div>
+          <h3 className="font-bold text-base tracking-tight flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+            <span>2026 Investigation</span>
+            <span
+              className={`text-xs font-medium ${
+                isDark ? "text-teal-light" : "text-teal-deep"
               }`}
             >
-              Yearly civic hardware &amp; data sanitization investigation
-            </p>
-          </div>
+              45-member cohort
+            </span>
+          </h3>
+          <p
+            className={`text-xs mt-0.5 ${
+              isDark ? "text-white/60" : "text-slate"
+            }`}
+          >
+            Yearly civic hardware &amp; data sanitization investigation
+          </p>
         </div>
 
         <Link
           href="mailto:unhackable.humans@gmail.com"
-          className={`text-xs font-semibold inline-flex items-center gap-1.5 transition-colors ${
+          className={`text-xs font-medium transition-colors ${
             isDark
               ? "text-teal-light hover:text-white"
               : "text-teal hover:text-teal-deep"
           }`}
         >
-          <span>unhackable.humans@gmail.com</span>
+          unhackable.humans@gmail.com
         </Link>
       </div>
 
@@ -291,20 +283,13 @@ export function YearlyInvestigationTabs({
           }`}
         >
           <MessageSquare className="w-3.5 h-3.5" />
-          <span>Experience Wall</span>
-          <span
-            className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-              isDark ? "bg-white/10 text-white/80" : "bg-mint text-teal-deep"
-            }`}
-          >
-            {wallPosts.length}
-          </span>
+          <span>Experience Wall ({wallPosts.length})</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab("register")}
-          className={`px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-all ${
+          className={`px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-colors ${
             activeTab === "register"
               ? isDark
                 ? "border-teal text-teal-light bg-white/[0.05]"
@@ -316,7 +301,6 @@ export function YearlyInvestigationTabs({
         >
           <UserPlus className="w-3.5 h-3.5" />
           <span>Register for Next Batch</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-teal"></span>
         </button>
       </div>
 
@@ -325,29 +309,17 @@ export function YearlyInvestigationTabs({
         {/* 1. IMPACT CREATED */}
         {activeTab === "impact" && (
           <div className="space-y-5 animate-fadeIn">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-teal">
-                  2026 Investigation Outcomes
-                </h4>
-                <p
-                  className={`text-xs mt-0.5 ${
-                    isDark ? "text-white/70" : "text-slate"
-                  }`}
-                >
-                  Mobilized 45 investigative members to deconstruct hardware
-                  dormancy and circular safety.
-                </p>
-              </div>
-              <span
-                className={`text-[11px] font-mono px-2.5 py-1 rounded-full font-medium self-start sm:self-auto ${
-                  isDark
-                    ? "bg-white/10 text-white/80"
-                    : "bg-offwhite border border-mint-border text-navy"
+            <div className="space-y-1">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.12em] text-teal-light">
+                2026 Investigation Outcomes
+              </h4>
+              <p
+                className={`text-xs ${
+                  isDark ? "text-white/70" : "text-slate"
                 }`}
               >
-                Cohort Size: 45 Investigators
-              </span>
+                45 student, research, and community members audited dormant electronics and mapped safe circular hand-off routes.
+              </p>
             </div>
 
             {/* Stat Cards */}

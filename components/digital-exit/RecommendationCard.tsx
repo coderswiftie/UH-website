@@ -59,24 +59,18 @@ export function RecommendationCard({
   return (
     <div className="w-full bg-white rounded-card border border-mint-border shadow-elevated p-6 md:p-8 space-y-8 animate-fadeIn">
       {/* 0. Header & Category */}
-      <div className="border-b border-mint-border/80 pb-6">
-        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-mint text-teal-deep">
-            <ShieldCheck className="w-3.5 h-3.5 text-teal" />
-            Your Digital Exit · Recommendation
-          </span>
-          <span className="text-xs text-slate uppercase tracking-wider font-medium">
-            Rule-Based Decision
-          </span>
-        </div>
+      <div className="border-b border-mint-border/80 pb-6 space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-teal">
+          Digital Exit Recommendation
+        </p>
 
-        <h2 className="text-2xl md:text-3xl font-bold text-navy tracking-tight mt-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-navy tracking-tight">
           {recommendation.headline}
         </h2>
 
-        <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-mint/50 border border-mint-border text-navy font-semibold text-sm">
+        <div className="pt-1 inline-flex items-center gap-2 text-teal-deep font-semibold text-sm">
           {getActionIcon(recommendation.action)}
-          <span>Primary Action: {primaryMeta.badgeLabel}</span>
+          <span>Recommended path: {primaryMeta.badgeLabel}</span>
         </div>
       </div>
 

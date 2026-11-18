@@ -2,18 +2,15 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Compass, Shield, Sparkles, UserCheck, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Card } from "@/components/ui/Card";
-
-import { SignalBadge } from "@/components/ui/SignalBadge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "About UH | Unhackable Humans",
+  title: "About | Unhackable Humans",
   description:
     "Philosophy, origin, and approach of Unhackable Humans. Human security through Minds over Manipulation.",
 };
@@ -24,127 +21,151 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* 1. Mission and Origin */}
-        <Section variant="offwhite" spacing="spacious" className="border-b border-mint-border">
+        {/* Origin & Mission */}
+        <Section
+          variant="offwhite"
+          spacing="spacious"
+          className="border-b border-mint-border"
+        >
           <Container>
             <ScrollReveal className="max-w-3xl space-y-6">
-              <div className="flex items-center gap-2.5">
-                <SignalBadge number="01" label="ORIGIN & MISSION" />
-                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
-                  HUMAN SECURITY
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-tight">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+                About Unhackable Humans
+              </p>
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-[1.1]">
                 Minds over Manipulation.
               </h1>
               <p className="text-lg sm:text-xl text-slate leading-relaxed">
-                Unhackable Humans was founded on a simple observation: cybersecurity investments have poured billions into patching software vulnerabilities, while the most vulnerable attack surface—human psychology—remains completely neglected.
+                Unhackable Humans began with a straightforward observation: while billions are spent patching software and securing networks, the human side of security is still treated as an afterthought.
               </p>
               <p className="text-base text-slate leading-relaxed">
-                When social engineers leverage urgency, panic, authority, or affection, technical firewalls are circumvented from the inside. We exist to build human resilience: equipping everyday individuals, families, and organizations with the cognitive reflexes needed to withstand manipulation.
+                When fraudsters manufacture urgency, fear, authority, or familiarity, strong technical tools get bypassed from the inside. We work to build human resilience — helping individuals, families, and organisations pause, verify, and stay grounded when pressured.
               </p>
             </ScrollReveal>
           </Container>
         </Section>
 
-        {/* 2 & 3. Why Human Security Matters & Minds over Manipulation */}
-        <Section variant="white" spacing="default" className="border-b border-mint-border">
+        {/* Philosophy Two-Column */}
+        <Section
+          variant="white"
+          spacing="default"
+          className="border-b border-mint-border"
+        >
           <Container>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
               <div className="space-y-4">
-                <span className="text-xs uppercase tracking-widest font-bold text-teal">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
                   The Human Layer
-                </span>
+                </p>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tight">
                   Why human security matters.
                 </h2>
                 <p className="text-sm sm:text-base text-slate leading-relaxed">
-                  Cybercrime has transformed from lone malware authors into highly structured psychological industries. Scammers operate structured scripts designed to create adrenaline spikes, cloud judgment, and enforce isolation.
+                  Modern scams are no longer lone technical tricks; they are coordinated operations built around repeatable psychological scripts designed to create pressure, cloud judgement, and isolate targets.
                 </p>
                 <p className="text-sm sm:text-base text-slate leading-relaxed">
-                  Blaming victims for falling for scams ignores how deeply human trust and compliance are hardwired. True security means designing social environments and cognitive habits that make healthy skepticism the default.
+                  Blaming victims ignores how deeply trust and cooperation are built into everyday life. Better security means creating practical habits and environments where stopping to check feels natural.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <span className="text-xs uppercase tracking-widest font-bold text-teal">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
                   Our Philosophy
-                </span>
+                </p>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tight">
                   What &ldquo;Minds over Manipulation&rdquo; means.
                 </h2>
                 <p className="text-sm sm:text-base text-slate leading-relaxed">
-                  &ldquo;Minds over Manipulation&rdquo; is a declaration that human judgment, when supported by the right tools and habits, can prevail over predatory deceit.
+                  It is the belief that human judgement, when backed by clear knowledge and practical habits, can hold steady against deceptive pressure.
                 </p>
                 <p className="text-sm sm:text-base text-slate leading-relaxed">
-                  It represents a pivot away from fear-based warnings toward empowering individuals to recognize emotional leverage in real time and hit the mental &ldquo;pause button&rdquo; before taking irrevocable action.
+                  Rather than relying on fear-based warnings, we help people recognise emotional leverage in real time and take a deliberate pause before making an irreversible decision.
                 </p>
               </div>
             </div>
           </Container>
         </Section>
 
-        {/* 4. Decode -> Educate -> Intervene Framework */}
-        <Section variant="offwhite" spacing="default" className="border-b border-mint-border">
+        {/* Framework */}
+        <Section
+          variant="offwhite"
+          spacing="default"
+          className="border-b border-mint-border"
+        >
           <Container>
-            <div className="max-w-2xl mb-12 space-y-3">
-              <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                Our Methodology
-              </span>
+            <div className="max-w-2xl mb-14 space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+                Methodology
+              </p>
               <h2 className="text-3xl font-extrabold text-navy tracking-tight">
-                The Decode → Educate → Intervene framework.
+                Decode, Educate, Intervene.
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card variant="white" className="space-y-3">
-                <span className="text-xs font-mono font-bold text-teal">01 · DECODE</span>
-                <h3 className="text-xl font-bold text-navy">Investigate Mechanics</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="border-t-2 border-navy pt-6 space-y-3">
+                <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+                  01 · Decode
+                </span>
+                <h3 className="text-xl font-bold text-navy">
+                  Examine real mechanics
+                </h3>
                 <p className="text-sm text-slate leading-relaxed">
-                  We reverse-engineer real scam transcripts, phishing architectures, and social engineering scripts to uncover the precise cognitive leverage used.
+                  We study real reported scams and manipulation scripts to pinpoint the exact turning point where pressure replaced independent verification.
                 </p>
-              </Card>
+              </div>
 
-              <Card variant="white" className="space-y-3">
-                <span className="text-xs font-mono font-bold text-teal">02 · EDUCATE</span>
-                <h3 className="text-xl font-bold text-navy">Actionable Literacy</h3>
+              <div className="border-t-2 border-teal pt-6 space-y-3">
+                <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+                  02 · Educate
+                </span>
+                <h3 className="text-xl font-bold text-navy">
+                  Share plain-language learning
+                </h3>
                 <p className="text-sm text-slate leading-relaxed">
-                  We translate investigative findings into plain-language case studies, interactive community workshops, and open-source educational resources.
+                  We turn our findings into readable weekly case breakdowns, scenario-based workshops, and open community guides.
                 </p>
-              </Card>
+              </div>
 
-              <Card variant="white" className="space-y-3">
-                <span className="text-xs font-mono font-bold text-teal">03 · INTERVENE</span>
-                <h3 className="text-xl font-bold text-navy">Build Systems</h3>
+              <div className="border-t-2 border-teal-deep pt-6 space-y-3">
+                <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+                  03 · Intervene
+                </span>
+                <h3 className="text-xl font-bold text-navy">
+                  Build practical tools
+                </h3>
                 <p className="text-sm text-slate leading-relaxed">
-                  We create practical tools—such as Digital Exit for retired hardware—that remove friction from safe, secure, and circular decision-making.
+                  We build straightforward tools — like Digital Exit for retired devices — that take the guesswork out of staying safe.
                 </p>
-              </Card>
+              </div>
             </div>
           </Container>
         </Section>
 
-        {/* 5. Founder's Desk */}
-        <Section variant="white" spacing="default" className="border-b border-mint-border">
+        {/* Founder's Desk */}
+        <Section
+          variant="white"
+          spacing="default"
+          className="border-b border-mint-border"
+        >
           <Container>
-            <div className="max-w-4xl mx-auto rounded-3xl border border-mint-border bg-gradient-to-b from-offwhite via-white to-offwhite p-8 md:p-12 space-y-8 shadow-card">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-mint-border pb-6">
-                <div className="flex items-center gap-2 text-teal font-bold text-xs uppercase tracking-widest">
-                  <UserCheck className="w-5 h-5 text-teal" />
-                  <span>Founder&apos;s Desk</span>
-                </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-6 mb-10 border-b border-mint-border">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">
+                  Founder&apos;s Desk
+                </p>
                 <Link
                   href="/team"
-                  className="text-xs font-semibold text-teal hover:text-teal-deep flex items-center gap-1 transition-colors"
+                  className="text-xs font-semibold text-teal hover:text-teal-deep inline-flex items-center gap-1 transition-colors"
                 >
-                  <span>Meet the Team &amp; Read Full Profile</span>
+                  <span>Meet the team &amp; read the full letter</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                <div className="md:col-span-4 space-y-3 text-center md:text-left">
-                  <div className="relative aspect-[4/5] w-full max-w-[240px] mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-elevated border-2 border-white ring-1 ring-mint-border">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="md:col-span-4 space-y-3">
+                  <div className="relative aspect-[4/5] w-full max-w-[240px] rounded-xl overflow-hidden border border-mint-border">
                     <Image
                       src="/images/founder.jpg"
                       alt="Rahi Shah - Founder of Unhackable Humans"
@@ -153,21 +174,25 @@ export default function AboutPage() {
                       className="object-cover object-top"
                     />
                   </div>
-                  <div className="pt-2">
-                    <h3 className="font-extrabold text-navy text-lg">Rahi Shah</h3>
-                    <p className="text-xs text-teal-deep font-semibold">Founder, Unhackable Humans</p>
-                    <p className="text-[11px] text-slate mt-1">Aspiring Cybersecurity Specialist</p>
+                  <div className="pt-1">
+                    <h3 className="font-bold text-navy text-base">Rahi Shah</h3>
+                    <p className="text-xs text-teal-deep font-medium">
+                      Founder, Unhackable Humans
+                    </p>
+                    <p className="text-xs text-slate mt-0.5">
+                      Aspiring Cybersecurity Specialist
+                    </p>
                   </div>
                 </div>
 
-                <div className="md:col-span-8 space-y-4 text-sm text-slate leading-relaxed">
-                  <h2 className="text-2xl font-extrabold text-navy tracking-tight">
+                <div className="md:col-span-8 space-y-4 text-sm sm:text-base text-slate leading-relaxed">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tight">
                     Why I Built Unhackable Humans
                   </h2>
 
-                  <div className="p-3.5 rounded-xl bg-mint/50 border border-teal/20 text-teal-deep font-medium italic text-xs sm:text-sm">
-                    &ldquo;What struck me wasn’t just how frequently these incidents occurred, but how quickly the world moved on from them. What if we stopped treating every scam as just another headline and started treating it as a lesson we could all learn from?&rdquo;
-                  </div>
+                  <blockquote className="pl-4 border-l-2 border-teal text-navy font-medium italic">
+                    &ldquo;What struck me wasn&apos;t just how frequently these incidents occurred, but how quickly the world moved on from them. What if we stopped treating every scam as just another headline and started treating it as a lesson we could all learn from?&rdquo;
+                  </blockquote>
 
                   <p>
                     For years, I had wanted to build a nonprofit of my own. I kept looking for opportunities, trying to understand where I could make a difference. And somewhere along the way, I started noticing a pattern in the newspapers I read every day: <em>Another scam. Another victim. Another life disrupted.</em>
@@ -184,39 +209,34 @@ export default function AboutPage() {
                   <div className="pt-2">
                     <Link
                       href="/team"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal hover:underline"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal hover:text-teal-deep transition-colors"
                     >
-                      <span>Read the full Founder&apos;s Desk letter on our Team page</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <span>Read the full letter on our Team page</span>
+                      <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
-              </div>
-
-              <div className="pt-4 border-t border-mint-border flex items-center justify-between text-xs text-slate">
-                <span className="font-semibold text-navy">Rahi Shah</span>
-                <span className="font-mono text-teal">Founder&apos;s Desk • Unhackable Humans</span>
               </div>
             </div>
           </Container>
         </Section>
 
-        {/* 6. Current Initiatives and Future Direction */}
+        {/* Future Direction */}
         <Section variant="mint" spacing="default">
           <Container>
             <div className="max-w-2xl mx-auto text-center space-y-4">
               <h2 className="text-3xl font-extrabold text-navy tracking-tight">
-                Our roadmap &amp; future direction.
+                Where we&apos;re headed next.
               </h2>
-              <p className="text-sm sm:text-base text-slate leading-relaxed">
-                As synthetic voice cloning, real-time deepfakes, and automated social engineering proliferate, our focus is expanding toward developing household verification protocols and institutional behavioral defense frameworks.
+              <p className="text-sm sm:text-base text-ink/80 leading-relaxed">
+                As voice cloning, synthetic media, and automated social engineering become more common, we are researching simple household verification habits and practical community guides to keep pace.
               </p>
-              <div className="pt-4">
+              <div className="pt-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-colors shadow-sm"
                 >
-                  <span>Collaborate With Our Team</span>
+                  <span>Collaborate With Us</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
