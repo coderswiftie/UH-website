@@ -155,7 +155,7 @@ export function ContactForm() {
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? "name-error" : undefined}
-          className={`w-full px-4 py-3 rounded-lg border text-sm text-ink bg-white transition-all ${
+          className={`w-full px-4 py-3 rounded-lg border text-base sm:text-sm text-ink bg-white transition-colors ${
             errors.name
               ? "border-red-500 focus:border-red-500"
               : "border-mint-border focus:border-teal"
@@ -184,7 +184,7 @@ export function ContactForm() {
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? "email-error" : undefined}
-          className={`w-full px-4 py-3 rounded-lg border text-sm text-ink bg-white transition-all ${
+          className={`w-full px-4 py-3 rounded-lg border text-base sm:text-sm text-ink bg-white transition-colors ${
             errors.email
               ? "border-red-500 focus:border-red-500"
               : "border-mint-border focus:border-teal"
@@ -212,7 +212,7 @@ export function ContactForm() {
           onChange={(e) =>
             setFormData({ ...formData, enquiryType: e.target.value })
           }
-          className="w-full px-4 py-3 rounded-lg border border-mint-border bg-white text-sm text-ink focus:border-teal transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-mint-border bg-white text-base sm:text-sm text-ink focus:border-teal transition-colors"
         >
           <option value="partnership">Institutional &amp; Academic Partnership</option>
           <option value="workshop">Community / Campus Workshop Request</option>
@@ -238,7 +238,7 @@ export function ContactForm() {
           }
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? "message-error" : undefined}
-          className={`w-full px-4 py-3 rounded-lg border text-sm text-ink bg-white transition-all ${
+          className={`w-full px-4 py-3 rounded-lg border text-base sm:text-sm text-ink bg-white transition-colors ${
             errors.message
               ? "border-red-500 focus:border-red-500"
               : "border-mint-border focus:border-teal"
@@ -256,7 +256,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-all duration-200 hover:-translate-y-0.5 shadow-sm active:translate-y-0 disabled:opacity-50"
+        className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-sm hover:bg-teal-deep transition-colors shadow-sm disabled:opacity-50"
       >
         <Send className="w-4 h-4" />
         <span>{isSubmitting ? "Sending Enquiry..." : "Send Message"}</span>

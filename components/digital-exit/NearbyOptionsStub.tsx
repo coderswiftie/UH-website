@@ -28,18 +28,18 @@ export function NearbyOptionsStub({ onBack }: NearbyOptionsStubProps) {
 
   return (
     <div className="w-full bg-white rounded-card border border-mint-border shadow-elevated p-6 md:p-8 space-y-6 animate-fadeIn">
-      <div className="flex items-center justify-between border-b border-mint-border/80 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-mint-border/80 pb-4">
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-medium text-slate hover:text-navy transition-colors"
+          className="inline-flex items-center gap-1.5 min-h-[40px] text-xs md:text-sm font-medium text-slate hover:text-navy transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Recommendation</span>
         </button>
 
-        <span className="text-xs uppercase tracking-wider font-semibold text-teal bg-mint px-2.5 py-1 rounded-full">
-          Screen 5 · Facility Directory
+        <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+          Facility Directory
         </span>
       </div>
 
@@ -71,7 +71,7 @@ export function NearbyOptionsStub({ onBack }: NearbyOptionsStubProps) {
                 setSearched(false);
               }}
               placeholder="e.g. 560001, Bengaluru, Mumbai, Delhi..."
-              className="w-full pl-10 pr-24 py-3 rounded-lg border border-mint-border bg-offwhite text-sm text-ink placeholder:text-slate/60 focus:bg-white focus:border-teal transition-all"
+              className="w-full pl-10 pr-24 py-3 rounded-lg border border-mint-border bg-offwhite text-base sm:text-sm text-ink placeholder:text-slate/60 focus:bg-white focus:border-teal transition-colors"
             />
             <button
               type="submit"
@@ -98,9 +98,9 @@ export function NearbyOptionsStub({ onBack }: NearbyOptionsStubProps) {
                   role="radio"
                   aria-checked={active}
                   onClick={() => setSelectedType(chip.id)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
+                  className={`min-h-[40px] px-3.5 py-2 rounded-md text-xs font-medium transition-colors border ${
                     active
-                      ? "bg-navy text-white border-navy shadow-sm"
+                      ? "bg-navy text-white border-navy"
                       : "bg-offwhite text-slate border-mint-border hover:border-slate/40 hover:text-navy"
                   }`}
                 >

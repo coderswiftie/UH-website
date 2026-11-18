@@ -109,29 +109,31 @@ export function RecommendationCard({
           {recommendation.checklist.map((step, idx) => {
             const isDone = !!completedChecklist[idx];
             return (
-              <li
-                key={idx}
-                className="flex items-start gap-3 p-3 rounded-lg bg-white border border-mint-border transition-colors hover:border-teal/40"
-              >
+              <li key={idx}>
                 <button
                   type="button"
                   onClick={() => toggleChecklistItem(idx)}
-                  className={`mt-0.5 shrink-0 w-5 h-5 rounded flex items-center justify-center border transition-all ${
-                    isDone
-                      ? "bg-teal border-teal text-white"
-                      : "border-slate/40 bg-offwhite hover:border-teal"
-                  }`}
-                  aria-label={`Mark step as ${isDone ? "incomplete" : "complete"}: ${step}`}
+                  aria-pressed={isDone}
+                  className="w-full min-h-[48px] text-left flex items-start gap-3 p-3.5 rounded-lg bg-white border border-mint-border transition-colors hover:border-teal/40"
                 >
-                  {isDone && <CheckCircle2 className="w-4 h-4" />}
+                  <span
+                    className={`mt-0.5 shrink-0 w-5 h-5 rounded flex items-center justify-center border transition-colors ${
+                      isDone
+                        ? "bg-teal border-teal text-white"
+                        : "border-slate/40 bg-offwhite"
+                    }`}
+                    aria-hidden="true"
+                  >
+                    {isDone && <CheckCircle2 className="w-4 h-4" />}
+                  </span>
+                  <span
+                    className={`text-xs md:text-sm leading-relaxed ${
+                      isDone ? "text-slate line-through" : "text-ink font-medium"
+                    }`}
+                  >
+                    {step}
+                  </span>
                 </button>
-                <span
-                  className={`text-xs md:text-sm leading-relaxed ${
-                    isDone ? "text-slate line-through" : "text-ink font-medium"
-                  }`}
-                >
-                  {step}
-                </span>
               </li>
             );
           })}

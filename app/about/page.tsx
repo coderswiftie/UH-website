@@ -164,8 +164,8 @@ export default function AboutPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
-                <div className="md:col-span-4 space-y-3">
-                  <div className="relative aspect-[4/5] w-full max-w-[240px] rounded-xl overflow-hidden border border-mint-border">
+                <div className="md:col-span-4 space-y-3 text-center md:text-left">
+                  <div className="relative aspect-[4/5] w-full max-w-[240px] mx-auto md:mx-0 rounded-xl overflow-hidden border border-mint-border">
                     <Image
                       src="/images/founder.jpg"
                       alt="Rahi Shah - Founder of Unhackable Humans"

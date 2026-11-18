@@ -238,7 +238,7 @@ export function YearlyInvestigationTabs({
         <button
           type="button"
           onClick={() => setActiveTab("impact")}
-          className={`px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-all ${
+          className={`min-h-[44px] px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-colors ${
             activeTab === "impact"
               ? isDark
                 ? "border-teal text-teal-light bg-white/[0.05]"
@@ -255,7 +255,7 @@ export function YearlyInvestigationTabs({
         <button
           type="button"
           onClick={() => setActiveTab("testimonials")}
-          className={`px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-all ${
+          className={`min-h-[44px] px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-colors ${
             activeTab === "testimonials"
               ? isDark
                 ? "border-teal text-teal-light bg-white/[0.05]"
@@ -272,7 +272,7 @@ export function YearlyInvestigationTabs({
         <button
           type="button"
           onClick={() => setActiveTab("wall")}
-          className={`px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-all ${
+          className={`min-h-[44px] px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-colors ${
             activeTab === "wall"
               ? isDark
                 ? "border-teal text-teal-light bg-white/[0.05]"
@@ -289,7 +289,7 @@ export function YearlyInvestigationTabs({
         <button
           type="button"
           onClick={() => setActiveTab("register")}
-          className={`px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-colors ${
+          className={`min-h-[44px] px-4 py-3 shrink-0 flex items-center gap-1.5 border-b-2 transition-colors ${
             activeTab === "register"
               ? isDark
                 ? "border-teal text-teal-light bg-white/[0.05]"
@@ -661,7 +661,7 @@ export function YearlyInvestigationTabs({
                   placeholder="Your Name / Handle"
                   value={wallName}
                   onChange={(e) => setWallName(e.target.value)}
-                  className={`text-xs px-3 py-2 rounded-lg border outline-none transition-colors ${
+                  className={`text-base sm:text-xs px-3 py-2.5 sm:py-2 rounded-lg border outline-none transition-colors ${
                     isDark
                       ? "bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-teal"
                       : "bg-white border-mint-border text-navy placeholder:text-slate/60 focus:border-teal"
@@ -673,7 +673,7 @@ export function YearlyInvestigationTabs({
                   placeholder="Role (e.g. 2026 Member, Citizen)"
                   value={wallRole}
                   onChange={(e) => setWallRole(e.target.value)}
-                  className={`text-xs px-3 py-2 rounded-lg border outline-none transition-colors ${
+                  className={`text-base sm:text-xs px-3 py-2.5 sm:py-2 rounded-lg border outline-none transition-colors ${
                     isDark
                       ? "bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-teal"
                       : "bg-white border-mint-border text-navy placeholder:text-slate/60 focus:border-teal"
@@ -683,7 +683,7 @@ export function YearlyInvestigationTabs({
                 <select
                   value={wallTag}
                   onChange={(e) => setWallTag(e.target.value)}
-                  className={`text-xs px-3 py-2 rounded-lg border outline-none transition-colors ${
+                  className={`text-base sm:text-xs px-3 py-2.5 sm:py-2 rounded-lg border outline-none transition-colors ${
                     isDark
                       ? "bg-navy border-white/10 text-white focus:border-teal"
                       : "bg-white border-mint-border text-navy focus:border-teal"
@@ -703,7 +703,7 @@ export function YearlyInvestigationTabs({
                 value={wallMessage}
                 onChange={(e) => setWallMessage(e.target.value)}
                 required
-                className={`w-full text-xs p-3 rounded-lg border outline-none transition-colors resize-none ${
+                className={`w-full text-base sm:text-xs p-3 rounded-lg border outline-none transition-colors resize-none ${
                   isDark
                     ? "bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-teal"
                     : "bg-white border-mint-border text-navy placeholder:text-slate/60 focus:border-teal"
@@ -722,7 +722,7 @@ export function YearlyInvestigationTabs({
 
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-lg bg-teal text-white text-xs font-semibold hover:bg-teal-deep transition-all inline-flex items-center gap-1.5 shadow-sm active:translate-y-0.5"
+                  className="min-h-[44px] px-4 py-2.5 rounded-lg bg-teal text-white text-xs font-semibold hover:bg-teal-deep transition-colors inline-flex items-center gap-1.5 shadow-sm"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Post to Wall</span>
@@ -889,7 +889,7 @@ export function YearlyInvestigationTabs({
                       placeholder="e.g. Maya Patel"
                       value={regName}
                       onChange={(e) => setRegName(e.target.value)}
-                      className={`w-full text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
+                      className={`w-full text-base sm:text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
                         isDark
                           ? "bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-teal"
                           : "bg-white border-mint-border text-navy placeholder:text-slate/60 focus:border-teal"
@@ -911,7 +911,7 @@ export function YearlyInvestigationTabs({
                       placeholder="e.g. maya@example.com"
                       value={regEmail}
                       onChange={(e) => setRegEmail(e.target.value)}
-                      className={`w-full text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
+                      className={`w-full text-base sm:text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
                         isDark
                           ? "bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-teal"
                           : "bg-white border-mint-border text-navy placeholder:text-slate/60 focus:border-teal"
@@ -932,7 +932,7 @@ export function YearlyInvestigationTabs({
                     <select
                       value={regRole}
                       onChange={(e) => setRegRole(e.target.value)}
-                      className={`w-full text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
+                      className={`w-full text-base sm:text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
                         isDark
                           ? "bg-navy border-white/10 text-white focus:border-teal"
                           : "bg-white border-mint-border text-navy focus:border-teal"
@@ -965,7 +965,7 @@ export function YearlyInvestigationTabs({
                       placeholder="e.g. Help audit campus tech / Learn data sanitization"
                       value={regNote}
                       onChange={(e) => setRegNote(e.target.value)}
-                      className={`w-full text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
+                      className={`w-full text-base sm:text-xs px-3.5 py-2.5 rounded-lg border outline-none transition-colors ${
                         isDark
                           ? "bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-teal"
                           : "bg-white border-mint-border text-navy placeholder:text-slate/60 focus:border-teal"
@@ -991,7 +991,7 @@ export function YearlyInvestigationTabs({
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-teal text-white text-xs font-semibold hover:bg-teal-deep transition-all shadow-md active:translate-y-0.5 inline-flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto min-h-[44px] px-6 py-2.5 rounded-lg bg-teal text-white text-xs font-semibold hover:bg-teal-deep transition-colors shadow-sm inline-flex items-center justify-center gap-2"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>Submit Cohort Registration</span>

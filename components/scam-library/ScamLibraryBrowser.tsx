@@ -134,13 +134,13 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
               setCurrentPage(1);
             }}
             placeholder="Search by case, tactic, location, or keyword…"
-            className="w-full pl-10 pr-10 py-3 rounded-lg border border-mint-border bg-offwhite text-sm text-ink placeholder:text-slate/60 focus:bg-white focus:border-teal transition-colors"
+            className="w-full pl-10 pr-10 py-3 rounded-lg border border-mint-border bg-offwhite text-base sm:text-sm text-ink placeholder:text-slate/60 focus:bg-white focus:border-teal transition-colors"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate hover:text-navy"
+              className="absolute inset-y-0 right-0 px-3.5 flex items-center text-slate hover:text-navy"
               aria-label="Clear search"
             >
               <X className="w-4 h-4" />
@@ -161,7 +161,7 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
                   setSelectedTag(tag);
                   setCurrentPage(1);
                 }}
-                className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+                className={`min-h-[38px] sm:min-h-0 px-3.5 py-2 sm:py-1.5 rounded-md text-xs font-medium transition-colors ${
                   isSelected
                     ? "bg-teal text-white"
                     : "bg-offwhite text-slate hover:text-navy hover:bg-mint/60"
@@ -185,7 +185,7 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
                 setSelectedCategory(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full px-3 py-2 rounded-md border border-mint-border bg-offwhite text-xs text-ink focus:border-teal"
+              className="w-full min-h-[44px] sm:min-h-0 px-3 py-2.5 sm:py-2 rounded-md border border-mint-border bg-offwhite text-base sm:text-xs text-ink focus:border-teal"
             >
               {categories.map((c) => (
                 <option key={c} value={c}>
@@ -205,7 +205,7 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
                 setSelectedTag(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full px-3 py-2 rounded-md border border-mint-border bg-offwhite text-xs text-ink focus:border-teal"
+              className="w-full min-h-[44px] sm:min-h-0 px-3 py-2.5 sm:py-2 rounded-md border border-mint-border bg-offwhite text-base sm:text-xs text-ink focus:border-teal"
             >
               {tags.map((t) => (
                 <option key={t} value={t}>
@@ -225,7 +225,7 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
                 setSelectedAudience(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full px-3 py-2 rounded-md border border-mint-border bg-offwhite text-xs text-ink focus:border-teal"
+              className="w-full min-h-[44px] sm:min-h-0 px-3 py-2.5 sm:py-2 rounded-md border border-mint-border bg-offwhite text-base sm:text-xs text-ink focus:border-teal"
             >
               {audiences.map((a) => (
                 <option key={a} value={a}>
@@ -244,7 +244,7 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
               onChange={(e) =>
                 setSortOrder(e.target.value as "newest" | "oldest")
               }
-              className="w-full px-3 py-2 rounded-md border border-mint-border bg-offwhite text-xs text-ink focus:border-teal"
+              className="w-full min-h-[44px] sm:min-h-0 px-3 py-2.5 sm:py-2 rounded-md border border-mint-border bg-offwhite text-base sm:text-xs text-ink focus:border-teal"
             >
               <option value="newest">Newest First</option>
               <option value="oldest">Oldest First</option>

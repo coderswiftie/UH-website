@@ -42,9 +42,9 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Site Navigation"
-      className="fixed inset-0 z-50 flex flex-col justify-between bg-navy text-white md:hidden animate-fadeIn"
+      className="fixed inset-0 z-50 flex flex-col justify-between bg-navy text-white lg:hidden animate-fadeIn"
     >
-      <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+      <div className="flex items-center justify-between px-5 sm:px-8 h-16 sm:h-[70px] border-b border-white/10">
         <Link
           href="/"
           onClick={onClose}
@@ -57,7 +57,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
             height={36}
             className="w-8 h-8 object-contain shrink-0"
           />
-          <span className="text-lg font-extrabold tracking-tight text-white">
+          <span className="text-base sm:text-lg font-extrabold tracking-tight text-white">
             Unhackable Humans
           </span>
         </Link>
@@ -66,13 +66,13 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
           type="button"
           onClick={onClose}
           aria-label="Close navigation menu"
-          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+          className="inline-flex items-center justify-center w-11 h-11 rounded-lg text-white/85 hover:text-white hover:bg-white/10 transition-colors"
         >
           <X className="w-6 h-6" />
         </button>
       </div>
 
-      <nav className="flex-1 px-5 py-6 overflow-y-auto space-y-1">
+      <nav className="flex-1 px-5 sm:px-8 py-6 overflow-y-auto space-y-1.5">
         {navLinks.map((link) => {
           const isActive =
             pathname === link.href ||
@@ -85,20 +85,31 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
               className={`flex items-center min-h-[52px] px-4 py-3 rounded-lg text-lg font-semibold transition-colors ${
                 isActive
                   ? "text-white bg-teal/20 border-l-2 border-teal pl-3.5"
-                  : "text-white/85 hover:text-white hover:bg-white/5"
+                  : "text-white/85 hover:text-white hover:bg-white/5 active:bg-white/10"
               }`}
             >
               {link.label}
             </Link>
           );
         })}
+        <Link
+          href="/contact"
+          onClick={onClose}
+          className={`flex items-center min-h-[52px] px-4 py-3 rounded-lg text-lg font-semibold transition-colors ${
+            pathname === "/contact"
+              ? "text-white bg-teal/20 border-l-2 border-teal pl-3.5"
+              : "text-white/85 hover:text-white hover:bg-white/5 active:bg-white/10"
+          }`}
+        >
+          Contact
+        </Link>
       </nav>
 
-      <div className="p-5 border-t border-white/10 bg-navy-dark/50">
+      <div className="p-5 sm:px-8 border-t border-white/10 bg-navy-dark/60">
         <Link
           href="/digital-exit"
           onClick={onClose}
-          className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-base hover:bg-teal-deep transition-colors"
+          className="w-full min-h-[48px] flex items-center justify-center gap-2 px-6 py-3.5 rounded-btn bg-teal text-white font-semibold text-base hover:bg-teal-deep transition-colors"
         >
           <span>Launch Digital Exit</span>
           <ArrowRight className="w-4 h-4" />

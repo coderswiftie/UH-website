@@ -145,7 +145,16 @@ export function HumanSecurityNetwork({
     };
 
     const startLoop = () => {
-      if (reducedMotion || rafId !== 0 || !isVisible || !isTabVisible) return;
+      // Keep mobile backdrop static (1 crisp frame) for silky 60fps touch scrolling
+      if (
+        reducedMotion ||
+        width < 768 ||
+        rafId !== 0 ||
+        !isVisible ||
+        !isTabVisible
+      ) {
+        return;
+      }
       lastTime = performance.now();
       rafId = requestAnimationFrame(tick);
     };

@@ -46,7 +46,7 @@ export default function ScamArticlePage({ params }: Props) {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-1 bg-white py-10 md:py-16">
+      <main className="flex-1 bg-white py-8 md:py-16">
         <Container>
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -229,7 +229,7 @@ export default function ScamArticlePage({ params }: Props) {
               {/* 05. THE COUNTER-MOVE */}
               <section
                 aria-labelledby="counter-move-heading"
-                className="rounded-card bg-navy text-white p-7 md:p-9 space-y-5"
+                className="rounded-card bg-navy text-white p-5 sm:p-7 md:p-9 space-y-5"
               >
                 <h2
                   id="counter-move-heading"
@@ -279,7 +279,7 @@ export default function ScamArticlePage({ params }: Props) {
               {/* 06. THE BIGGER INSIGHT */}
               <section
                 aria-labelledby="bigger-insight-heading"
-                className="rounded-card bg-mint/60 border border-mint-border p-7 md:p-9 space-y-4"
+                className="rounded-card bg-mint/60 border border-mint-border p-5 sm:p-7 md:p-9 space-y-4"
               >
                 <h2
                   id="bigger-insight-heading"

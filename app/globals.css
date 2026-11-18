@@ -21,16 +21,23 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(27, 127, 121, 0.14);
   }
 
   body {
     background-color: #F7F8F6;
     color: #17202A;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
   }
 
   /* Accessible focus ring */

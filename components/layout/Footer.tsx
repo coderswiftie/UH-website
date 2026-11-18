@@ -133,12 +133,12 @@ export function Footer() {
                 </span>
               </a>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 <a
                   href="https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-colors"
                   aria-label="Unhackable Humans on LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -148,7 +148,7 @@ export function Footer() {
                   href="https://www.instagram.com/unhackable_humans/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-colors"
                   aria-label="Unhackable Humans on Instagram"
                 >
                   <Instagram className="w-4 h-4" />
@@ -158,7 +158,7 @@ export function Footer() {
                   href="https://www.youtube.com/@RahiShah_02"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-colors"
                   aria-label="Unhackable Humans on YouTube"
                 >
                   <Youtube className="w-4 h-4" />

@@ -61,7 +61,7 @@ export default function TeamPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
               {/* Founder Profile Column */}
               <ScrollReveal className="lg:col-span-4 space-y-5 lg:sticky lg:top-24">
-                <div className="relative aspect-[4/5] w-full max-w-sm rounded-xl overflow-hidden border border-mint-border">
+                <div className="relative aspect-[4/5] w-full max-w-xs sm:max-w-sm mx-auto lg:mx-0 rounded-xl overflow-hidden border border-mint-border">
                   <Image
                     src="/images/founder.jpg"
                     alt="Rahi Shah - Founder of Unhackable Humans"
