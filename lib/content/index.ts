@@ -211,6 +211,28 @@ export const MOCK_TEAM: TeamMember[] = [
     order: 1,
   },
   {
+    id: "nandini-rathod",
+    name: "Nandini Rathod",
+    role: "Tech Lead",
+    biography:
+      "Leading technical architecture, platform engineering, and open-source civic tools at Unhackable Humans, building secure, privacy-preserving digital interventions.",
+    photo: "/images/nandini-rathod.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
+    active: true,
+    order: 2,
+  },
+  {
+    id: "srishti-asrani",
+    name: "Srishti Asrani",
+    role: "Tech Lead",
+    biography:
+      "Leading technical development, software systems, and digital product experience, translating human behavioral security research into accessible web and data platforms.",
+    photo: "/images/srishti-asrani.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
+    active: true,
+    order: 3,
+  },
+  {
     id: "pruthvi-vala",
     name: "Pruthvi Vala",
     role: "Digital Media Lead",
@@ -219,7 +241,7 @@ export const MOCK_TEAM: TeamMember[] = [
     photo: "/images/pruthvi-vala.jpg",
     socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
-    order: 2,
+    order: 4,
   },
   {
     id: "darsh-mathur",
@@ -230,7 +252,7 @@ export const MOCK_TEAM: TeamMember[] = [
     photo: "/images/darsh-mathur.jpg",
     socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
-    order: 3,
+    order: 5,
   },
 ];
 
