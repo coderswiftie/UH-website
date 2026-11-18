@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail, Youtube, Instagram, Linkedin } from "lucide-react";
 import { Container } from "../ui/Container";
 
 import Image from "next/image";
@@ -92,18 +92,60 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Placeholders for Contact and Socials per Hard Rule 1 */}
+          {/* Connect Column: Official Email & Social Channels */}
           <div className="space-y-3">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-light text-slate/70">
               Connect
             </span>
-            <div className="space-y-2 text-xs text-slate/70">
-              <p className="rounded p-2 bg-white/5 border border-white/10 font-mono text-[11px]">
-                [PLACEHOLDER: Official UH email &amp; institutional contact details]
-              </p>
-              <p className="rounded p-2 bg-white/5 border border-white/10 font-mono text-[11px]">
-                [PLACEHOLDER: Verified social channels (LinkedIn, Substack)]
-              </p>
+            <div className="space-y-3 text-xs">
+              <a
+                href="mailto:unhackable.humans@gmail.com"
+                className="flex items-center gap-2 text-white/80 hover:text-teal-light transition-colors group"
+                title="Send enquiry to Unhackable Humans"
+              >
+                <Mail className="w-3.5 h-3.5 text-teal-light shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="break-all font-mono text-[11px]">unhackable.humans@gmail.com</span>
+              </a>
+
+              <div className="space-y-2 pt-1">
+                <span className="text-[11px] font-medium text-slate/80 block">
+                  Official Channels:
+                </span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-all"
+                    aria-label="Unhackable Humans on LinkedIn"
+                    title="LinkedIn"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/unhackable_humans/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-all"
+                    aria-label="Unhackable Humans on Instagram"
+                    title="Instagram"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href="https://www.youtube.com/@RahiShah_02"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-teal hover:border-teal transition-all"
+                    aria-label="Unhackable Humans on YouTube"
+                    title="YouTube"
+                  >
+                    <Youtube className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

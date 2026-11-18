@@ -438,7 +438,7 @@ export const MOCK_PROJECTS: Project[] = [
     intervention:
       "The Digital Exit platform guides users through verified, device-specific data sanitization and circular disposition paths (repair, reuse, donation, and recycling).",
     impact:
-      "[PLACEHOLDER: Verified circular hand-off paths mapped for pilot regions]",
+      "45 cohort members mobilized in the 2026 yearly investigation; 380+ dormant devices audited and circular exit pathways mapped.",
     beneficiary:
       "Households with idle electronics, students lacking digital access, and certified recycling ecosystems.",
     status: "ongoing",
@@ -501,33 +501,58 @@ export const MOCK_TESTIMONIALS: Testimonial[] = [
 export const MOCK_TEAM: TeamMember[] = [
   {
     id: "founder",
-    name: "[PLACEHOLDER: Founder Name]",
+    name: "Rahi Shah",
     role: "Founder & Lead Investigator",
     biography:
-      "[PLACEHOLDER: Personal, authentic background on founding Unhackable Humans, focusing on the intersection of human psychology, cybersecurity, and societal resilience.]",
-    socialLink: "[PLACEHOLDER: LinkedIn or Substack profile]",
+      "Aspiring cybersecurity specialist and Founder of Unhackable Humans. Dedicated to deconstructing cyber fraud psychology, empowering human decision-making, and bridging technology with empathetic civic resilience.",
+    photo: "/images/founder.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
     order: 1,
   },
   {
-    id: "core-01",
-    name: "[PLACEHOLDER: Core Member Name]",
-    role: "Research & Scam Intelligence Lead",
+    id: "nandini-rathod",
+    name: "Nandini Rathod",
+    role: "Tech Lead",
     biography:
-      "[PLACEHOLDER: Focus on field investigations, deconstructing manipulation mechanics, and open educational resources.]",
-    socialLink: "[PLACEHOLDER: Verified profile link]",
+      "Leading technical architecture, platform engineering, and open-source civic tools at Unhackable Humans, building secure, privacy-preserving digital interventions.",
+    photo: "/images/nandini-rathod.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
     order: 2,
   },
   {
-    id: "core-02",
-    name: "[PLACEHOLDER: Core Member Name]",
-    role: "Circular Technology & Interventions Lead",
+    id: "srishti-asrani",
+    name: "Srishti Asrani",
+    role: "Tech Lead",
     biography:
-      "[PLACEHOLDER: Leading the Invisible Devices initiative, electronic waste safety standards, and regional repair networks.]",
-    socialLink: "[PLACEHOLDER: Verified profile link]",
+      "Leading technical development, software systems, and digital product experience, translating human behavioral security research into accessible web and data platforms.",
+    photo: "/images/srishti-asrani.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
     order: 3,
+  },
+  {
+    id: "pruthvi-vala",
+    name: "Pruthvi Vala",
+    role: "Digital Media Lead",
+    biography:
+      "Leading digital media strategy, creative visual storytelling, and communications to decode complex scam mechanics and amplify human security awareness across communities.",
+    photo: "/images/pruthvi-vala.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
+    active: true,
+    order: 4,
+  },
+  {
+    id: "darsh-mathur",
+    name: "Darsh Mathur",
+    role: "Workshop Coordinator",
+    biography:
+      "Coordinating interactive community simulations, academic workshops, and civic literacy labs to train students and citizens in real-time scam verification and psychological resistance.",
+    photo: "/images/darsh-mathur.jpg",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
+    active: true,
+    order: 5,
   },
 ];
 

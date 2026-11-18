@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Compass, Shield, Sparkles, UserCheck } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Compass, Shield, Sparkles, UserCheck, Quote } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
@@ -123,40 +124,78 @@ export default function AboutPage() {
           </Container>
         </Section>
 
-        {/* 5. Founder's Desk (Placeholder per Hard Rule 1 & §5.4 item 5) */}
+        {/* 5. Founder's Desk */}
         <Section variant="white" spacing="default" className="border-b border-mint-border">
           <Container>
-            <div className="max-w-3xl mx-auto rounded-card border border-mint-border bg-offwhite p-8 md:p-12 space-y-6">
-              <div className="flex items-center gap-2">
-                <UserCheck className="w-5 h-5 text-teal" />
-                <span className="text-xs uppercase tracking-widest font-bold text-teal">
-                  Founder&apos;s Desk
-                </span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tight">
-                A personal note on why we built Unhackable Humans.
-              </h2>
-
-              <div className="space-y-4 text-sm sm:text-base text-slate leading-relaxed italic">
-                <p className="font-mono text-xs not-italic p-3 rounded bg-white border border-slate/20 text-slate">
-                  [PLACEHOLDER: Authentic personal essay from the Founder detailing the personal encounter or insight that catalyzed the creation of UH, emphasizing human security, empathy over shame, and community defense.]
-                </p>
-                <p>
-                  &ldquo;I saw brilliant, thoughtful people get deceived not because they were foolish, but because an adversary skillfully dialed their emotional temperature to boiling point. We cannot solve manipulation with code alone; we must solve it with human clarity.&rdquo;
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-mint-border flex items-center justify-between">
-                <div>
-                  <span className="font-bold text-navy text-sm block">
-                    [PLACEHOLDER: Founder Name]
-                  </span>
-                  <span className="text-xs text-slate">
-                    Founder, Unhackable Humans
-                  </span>
+            <div className="max-w-4xl mx-auto rounded-3xl border border-mint-border bg-gradient-to-b from-offwhite via-white to-offwhite p-8 md:p-12 space-y-8 shadow-card">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-mint-border pb-6">
+                <div className="flex items-center gap-2 text-teal font-bold text-xs uppercase tracking-widest">
+                  <UserCheck className="w-5 h-5 text-teal" />
+                  <span>Founder&apos;s Desk</span>
                 </div>
-                <span className="text-xs font-mono text-slate/60">[PLACEHOLDER: Signature]</span>
+                <Link
+                  href="/team"
+                  className="text-xs font-semibold text-teal hover:text-teal-deep flex items-center gap-1 transition-colors"
+                >
+                  <span>Meet the Team &amp; Read Full Profile</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div className="md:col-span-4 space-y-3 text-center md:text-left">
+                  <div className="relative aspect-[4/5] w-full max-w-[240px] mx-auto md:mx-0 rounded-2xl overflow-hidden shadow-elevated border-2 border-white ring-1 ring-mint-border">
+                    <Image
+                      src="/images/founder.jpg"
+                      alt="Rahi Shah - Founder of Unhackable Humans"
+                      fill
+                      sizes="240px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="pt-2">
+                    <h3 className="font-extrabold text-navy text-lg">Rahi Shah</h3>
+                    <p className="text-xs text-teal-deep font-semibold">Founder, Unhackable Humans</p>
+                    <p className="text-[11px] text-slate mt-1">Aspiring Cybersecurity Specialist</p>
+                  </div>
+                </div>
+
+                <div className="md:col-span-8 space-y-4 text-sm text-slate leading-relaxed">
+                  <h2 className="text-2xl font-extrabold text-navy tracking-tight">
+                    Why I Built Unhackable Humans
+                  </h2>
+
+                  <div className="p-3.5 rounded-xl bg-mint/50 border border-teal/20 text-teal-deep font-medium italic text-xs sm:text-sm">
+                    &ldquo;What struck me wasn’t just how frequently these incidents occurred, but how quickly the world moved on from them. What if we stopped treating every scam as just another headline and started treating it as a lesson we could all learn from?&rdquo;
+                  </div>
+
+                  <p>
+                    For years, I had wanted to build a nonprofit of my own. I kept looking for opportunities, trying to understand where I could make a difference. And somewhere along the way, I started noticing a pattern in the newspapers I read every day: <em>Another scam. Another victim. Another life disrupted.</em>
+                  </p>
+
+                  <p>
+                    As someone aspiring to become a cybersecurity specialist, I deeply believe in the power of technology to make our world safer. Better systems, stronger security, and technical advancements are essential. But I also believe that security cannot end with technology.
+                  </p>
+
+                  <p>
+                    Because behind every scam is a human being. Human emotions, trust, fear, urgency, and the desire to help can all become points of vulnerability. Security is not just about protecting systems; it is about empowering the people who use them.
+                  </p>
+
+                  <div className="pt-2">
+                    <Link
+                      href="/team"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal hover:underline"
+                    >
+                      <span>Read the full Founder&apos;s Desk letter on our Team page</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-mint-border flex items-center justify-between text-xs text-slate">
+                <span className="font-semibold text-navy">Rahi Shah</span>
+                <span className="font-mono text-teal">Founder&apos;s Desk • Unhackable Humans</span>
               </div>
             </div>
           </Container>

@@ -18,6 +18,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
+import { YearlyInvestigationTabs } from "@/components/invisible-devices/YearlyInvestigationTabs";
 
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
@@ -59,6 +60,25 @@ export default function InvisibleDevicesPage() {
                 </Link>
               </div>
             </ScrollReveal>
+          </Container>
+        </Section>
+
+        {/* 2026 Investigation Section */}
+        <Section variant="white" spacing="default" className="border-b border-mint-border">
+          <Container>
+            <div className="max-w-3xl mb-10 space-y-3">
+              <span className="text-xs uppercase tracking-widest font-bold text-teal">
+                Yearly Field Investigations
+              </span>
+              <h2 className="text-3xl font-extrabold text-navy tracking-tight">
+                2026 Investigation Cohort
+              </h2>
+              <p className="text-sm text-slate leading-relaxed">
+                For Invisible Devices, we conduct yearly investigations. In our 2026 cohort, 45 members mobilized across communities to investigate dormant tech, deconstruct data sanitization fears, and map verified circular hand-off routes.
+              </p>
+            </div>
+
+            <YearlyInvestigationTabs theme="light" />
           </Container>
         </Section>
 
