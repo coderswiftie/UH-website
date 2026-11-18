@@ -201,10 +201,11 @@ export const MOCK_TESTIMONIALS: Testimonial[] = [
 export const MOCK_TEAM: TeamMember[] = [
   {
     id: "founder",
-    name: "[PLACEHOLDER: Founder Name]",
+    name: "Rahi Shah",
     role: "Founder & Lead Investigator",
     biography:
-      "[PLACEHOLDER: Personal, authentic background on founding Unhackable Humans, focusing on the intersection of human psychology, cybersecurity, and societal resilience.]",
+      "Aspiring cybersecurity specialist and Founder of Unhackable Humans. Dedicated to deconstructing cyber fraud psychology, empowering human decision-making, and bridging technology with empathetic civic resilience.",
+    photo: "/images/founder.jpg",
     socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
     order: 1,
