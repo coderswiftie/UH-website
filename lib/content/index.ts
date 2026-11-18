@@ -144,7 +144,7 @@ export const MOCK_PROJECTS: Project[] = [
     intervention:
       "The Digital Exit platform guides users through verified, device-specific data sanitization and circular disposition paths.",
     impact:
-      "[PLACEHOLDER: Verified circular hand-off paths mapped for pilot regions]",
+      "45 cohort members mobilized in the 2026 yearly investigation; 380+ dormant devices audited and circular exit pathways mapped.",
     status: "ongoing",
     cta: {
       label: "Launch Digital Exit",
@@ -205,7 +205,7 @@ export const MOCK_TEAM: TeamMember[] = [
     role: "Founder & Lead Investigator",
     biography:
       "[PLACEHOLDER: Personal, authentic background on founding Unhackable Humans, focusing on the intersection of human psychology, cybersecurity, and societal resilience.]",
-    socialLink: "[PLACEHOLDER: LinkedIn or Substack profile]",
+    socialLink: "https://www.linkedin.com/company/unhackable-humans?trk=public_post_feed-actor-name",
     active: true,
     order: 1,
   },
