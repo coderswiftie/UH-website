@@ -9,6 +9,7 @@ import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { getAllProjects } from "@/lib/content";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { ProjectSchematic } from "@/components/visuals/ProjectSchematic";
 
 export const metadata: Metadata = {
   title: "Our Work | Unhackable Humans",
@@ -63,22 +64,18 @@ export default function OurWorkPage() {
                   key={proj.id}
                   className="rounded-card border border-mint-border bg-white shadow-card overflow-hidden uh-card-hover group relative p-6 md:p-10"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    {/* Media Column (Placeholder per Hard Rule 1) */}
-                    <div className="lg:col-span-4">
-                      <div className="aspect-[4/3] rounded-xl bg-offwhite border border-dashed border-slate/30 flex flex-col items-center justify-center p-6 text-center space-y-2">
-                        <Wrench className="w-8 h-8 text-teal" />
-                        <span className="text-xs font-semibold text-navy uppercase tracking-wider">
-                          {proj.title} Media Graphic
-                        </span>
-                        <p className="text-[11px] text-slate/70">
-                          Documentary or architectural visualization.
-                        </p>
-                      </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    {/* Media Column */}
+                    <div className="lg:col-span-5">
+                      <ProjectSchematic
+                        projectId={proj.id}
+                        media={proj.media}
+                        title={proj.title}
+                      />
                     </div>
 
                     {/* Details Column */}
-                    <div className="lg:col-span-8 space-y-5">
+                    <div className="lg:col-span-7 space-y-5">
                       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-mint-border/80 pb-4">
                         <h2 className="text-2xl font-bold text-navy tracking-tight">
                           {proj.title}
@@ -92,23 +89,32 @@ export default function OurWorkPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                         <div className="p-3.5 rounded-lg bg-offwhite border border-mint-border space-y-1">
-                          <strong className="text-navy uppercase tracking-wide block">
+                          <strong className="text-navy uppercase tracking-wide block font-mono text-[10px]">
                             The Problem:
                           </strong>
                           <p className="text-slate leading-relaxed">{proj.problem}</p>
                         </div>
 
                         <div className="p-3.5 rounded-lg bg-offwhite border border-mint-border space-y-1">
-                          <strong className="text-teal-deep uppercase tracking-wide block">
+                          <strong className="text-teal-deep uppercase tracking-wide block font-mono text-[10px]">
                             The Intervention:
                           </strong>
                           <p className="text-slate leading-relaxed">{proj.intervention}</p>
                         </div>
                       </div>
 
-                      <div className="p-3.5 rounded-lg bg-mint/40 border border-teal/20 text-xs space-y-1">
-                        <strong className="text-navy uppercase tracking-wide block">
-                          Evidence / Impact:
+                      {proj.beneficiary && (
+                        <div className="p-3 rounded-lg bg-mint/50 border border-teal/20 text-xs space-y-0.5">
+                          <strong className="text-teal uppercase tracking-wide block font-mono text-[10px]">
+                            Who Benefits:
+                          </strong>
+                          <p className="text-slate/90 leading-relaxed font-medium">{proj.beneficiary}</p>
+                        </div>
+                      )}
+
+                      <div className="p-3.5 rounded-lg bg-offwhite border border-mint-border text-xs space-y-1">
+                        <strong className="text-navy uppercase tracking-wide block font-mono text-[10px]">
+                          Evidence / Verification Status:
                         </strong>
                         <p className="font-mono text-[11px] text-slate leading-relaxed">
                           {proj.impact}

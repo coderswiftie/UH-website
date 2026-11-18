@@ -7,7 +7,7 @@ import { HeroBackground } from "./HeroBackground";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-16 md:pb-24 bg-offwhite">
+    <section id="hero-section" className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-16 md:pb-24 bg-offwhite/90">
       {/* Subtle animated artistic background */}
       <HeroBackground />
 
@@ -15,25 +15,29 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Text Content */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal">
-              <span>Human Security</span>
-              <span className="text-slate/40">•</span>
-              <span className="text-slate font-medium">Minds over Manipulation</span>
+            <div className="flex items-center gap-2.5">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-mint border border-mint-border text-teal-deep text-xs font-semibold uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
+                Human Security Initiative
+              </span>
+              <span className="hidden sm:inline-block text-xs font-medium text-slate">
+                Minds over Manipulation
+              </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy tracking-tight leading-[1.12]">
               <span className="inline-block">People</span>{" "}
               <span className="inline-block">get</span>
-              <span className="inline-block w-4 sm:w-6 lg:w-8" aria-hidden="true" />
+              <span className="inline-block w-3 sm:w-5 lg:w-6" aria-hidden="true" />
               <span className="relative inline-block text-navy">
                 hacked
-                <span className="absolute bottom-1 sm:bottom-1.5 left-0 right-0 h-[4px] sm:h-[6px] bg-teal/20 -z-10 rounded-sm" />
+                <span className="absolute bottom-1 sm:bottom-1.5 left-0 right-0 h-[4px] sm:h-[6px] bg-teal/25 -z-10 rounded-sm" />
               </span>{" "}
               <span className="inline-block">too.</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-slate leading-relaxed max-w-2xl">
-              Unhackable Humans builds human security by decoding manipulation, exposing real-world scams and helping people make safer decisions.
+            <p className="text-base sm:text-lg lg:text-xl text-slate leading-relaxed max-w-2xl font-normal">
+              Unhackable Humans is a human-security initiative that helps people recognise digital manipulation, understand real-world scams and make safer decisions through education, research and practical interventions.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
@@ -44,7 +48,7 @@ export function Hero() {
 
               <Link
                 href="/scam-library"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate hover:text-navy transition-colors py-2 group/link"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-teal transition-colors py-2 group/link"
               >
                 <span>Read the Latest Scam</span>
                 <ArrowRight className="w-4 h-4 text-teal transition-transform duration-200 group-hover/link:translate-x-1" />
@@ -52,24 +56,29 @@ export function Hero() {
             </div>
 
             {/* Credibility statement */}
-            <div className="pt-6 border-t border-mint-border/80 flex items-center gap-6 text-xs text-slate">
-              <span className="font-semibold text-navy">Core Philosophy:</span>
-              <span>Decode</span>
-              <span className="text-slate/40">•</span>
-              <span>Educate</span>
-              <span className="text-slate/40">•</span>
-              <span>Intervene</span>
+            <div className="pt-6 border-t border-mint-border flex items-center gap-6 text-xs text-slate">
+              <span className="font-semibold text-navy uppercase tracking-wider text-[11px]">Core Philosophy:</span>
+              <span className="font-medium text-teal-deep">Decode</span>
+              <span className="text-slate/30">•</span>
+              <span className="font-medium text-teal-deep">Educate</span>
+              <span className="text-slate/30">•</span>
+              <span className="font-medium text-teal-deep">Intervene</span>
             </div>
           </div>
 
           {/* Right Column: Editorial Human Insight */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="rounded-2xl border border-mint-border bg-white shadow-card p-7 sm:p-9 space-y-6">
-                <div className="space-y-2">
-                  <span className="text-xs uppercase tracking-wider font-bold text-teal">
-                    The Human Layer
-                  </span>
+              <div className="rounded-2xl border border-mint-border bg-white shadow-card p-7 sm:p-8 space-y-5 transition-all duration-300 hover:shadow-elevated">
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono uppercase tracking-widest font-bold text-teal">
+                      THE HUMAN LAYER
+                    </span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-mint text-teal-deep border border-mint-border">
+                      DEFENSE PERSPECTIVE
+                    </span>
+                  </div>
                   <h2 className="text-xl sm:text-2xl font-bold text-navy tracking-tight leading-snug">
                     Firewalls defend networks. Critical pause points defend judgment.
                   </h2>
@@ -79,9 +88,27 @@ export function Hero() {
                   Traditional cybersecurity protects endpoints and servers. Unhackable Humans operates where technology meets human vulnerability: in the moments of fear, urgency, and misplaced trust where decisions are actually made.
                 </p>
 
-                <div className="pt-4 border-t border-mint-border flex items-center justify-between text-xs text-slate">
-                  <span className="font-semibold text-navy">Core Practice</span>
-                  <span className="font-medium text-slate/80">Decode • Educate • Intervene</span>
+                {/* 3 Pillars Quick Architecture */}
+                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-mint-border/80 text-center">
+                  <div className="p-2 rounded-lg bg-offwhite border border-mint-border/60">
+                    <span className="block font-mono text-[10px] font-bold text-teal">01 // DECODE</span>
+                    <span className="text-[11px] text-slate font-medium">Scam Tactics</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-offwhite border border-mint-border/60">
+                    <span className="block font-mono text-[10px] font-bold text-teal">02 // EDUCATE</span>
+                    <span className="text-[11px] text-slate font-medium">Habits &amp; Pause</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-offwhite border border-mint-border/60">
+                    <span className="block font-mono text-[10px] font-bold text-teal">03 // INTERVENE</span>
+                    <span className="text-[11px] text-slate font-medium">Action Tools</span>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex items-center justify-between text-xs text-slate border-t border-mint-border/60">
+                  <span className="font-semibold text-navy">Non-Profit Civic Initiative</span>
+                  <Link href="/about" className="font-medium text-teal hover:underline inline-flex items-center gap-1">
+                    About Our Origin →
+                  </Link>
                 </div>
               </div>
             </div>

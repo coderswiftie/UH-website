@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "../ui/Container";
 import { getAllProjects } from "@/lib/content";
 import { ScrollReveal } from "../ui/ScrollReveal";
+import { ProjectSchematic } from "../visuals/ProjectSchematic";
 
 export function WorkSection() {
   const projects = getAllProjects();
@@ -33,28 +34,29 @@ export function WorkSection() {
           </Link>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((proj, idx) => (
             <ScrollReveal
               key={proj.id}
-              delay={idx * 80}
-              className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between hover:border-teal/40 hover:bg-white transition-all duration-200 relative"
+              delay={idx * 60}
+              className="group p-6 sm:p-8 rounded-card border border-mint-border bg-offwhite flex flex-col justify-between hover:border-teal/40 hover:bg-white transition-all duration-300 shadow-subtle hover:shadow-card relative overflow-hidden"
             >
-
-              <div className="space-y-4">
-                {/* Visual Placeholder */}
-                <div className="aspect-[16/9] w-full rounded-xl bg-white border border-dashed border-slate/20 flex flex-col items-center justify-center p-4 text-center transition-transform duration-300 group-hover:scale-[1.01]">
-                  <span className="text-xs uppercase tracking-wider font-semibold text-navy">
-                    {proj.title} Graphic
-                  </span>
+              <div className="space-y-5">
+                {/* Visual Media Graphic */}
+                <div className="transition-transform duration-300 group-hover:scale-[1.01]">
+                  <ProjectSchematic
+                    projectId={proj.id}
+                    media={proj.media}
+                    title={proj.title}
+                  />
                 </div>
 
-                <div className="flex items-center justify-between pt-2">
+                <div className="flex items-center justify-between pt-1">
                   <h3 className="text-xl font-bold text-navy tracking-tight group-hover:text-teal transition-colors">
                     {proj.title}
                   </h3>
                   <span
-                    className={`text-[11px] font-semibold uppercase px-2.5 py-0.5 rounded-full ${
+                    className={`text-[10px] font-mono font-semibold uppercase px-2.5 py-0.5 rounded-full ${
                       proj.status === "ongoing"
                         ? "bg-teal/10 text-teal-deep border border-teal/20"
                         : "bg-slate/10 text-slate border border-slate/20"
@@ -64,19 +66,54 @@ export function WorkSection() {
                   </span>
                 </div>
 
-                <p className="text-sm text-slate leading-relaxed">
+                <p className="text-sm text-navy/90 font-medium leading-relaxed">
                   {proj.summary}
                 </p>
+
+                {/* 3 Core Aspects: Problem, Intervention, Beneficiary */}
+                <div className="space-y-2.5 pt-1 text-xs">
+                  <div className="p-3 rounded-lg bg-white border border-mint-border/80 space-y-1">
+                    <span className="font-mono text-[10px] uppercase font-bold text-navy block">
+                      The Problem:
+                    </span>
+                    <p className="text-slate leading-relaxed">
+                      {proj.problem}
+                    </p>
+                  </div>
+
+                  <div className="p-3 rounded-lg bg-white border border-mint-border/80 space-y-1">
+                    <span className="font-mono text-[10px] uppercase font-bold text-teal-deep block">
+                      What UH Does:
+                    </span>
+                    <p className="text-slate leading-relaxed">
+                      {proj.intervention}
+                    </p>
+                  </div>
+
+                  {proj.beneficiary && (
+                    <div className="p-2.5 rounded-lg bg-mint/50 border border-teal/20 space-y-0.5">
+                      <span className="font-mono text-[10px] uppercase font-bold text-teal block">
+                        Who Benefits:
+                      </span>
+                      <p className="text-slate/90 leading-relaxed font-medium">
+                        {proj.beneficiary}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
 
-              <div className="pt-6 border-t border-mint-border/60 mt-6">
+              <div className="pt-6 border-t border-mint-border/80 mt-6 flex items-center justify-between">
                 <Link
                   href={proj.cta?.href || "/our-work"}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal hover:text-teal-deep transition-colors"
+                  className="group/btn inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-teal-deep transition-colors"
                 >
-                  <span>{proj.cta?.label || "Explore"}</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5" />
+                  <span>{proj.cta?.label || "Explore Initiative"}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1.5" />
                 </Link>
+                <span className="text-[11px] font-mono text-slate/50">
+                  UH // CIVIC ACTION
+                </span>
               </div>
             </ScrollReveal>
           ))}

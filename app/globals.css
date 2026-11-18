@@ -5,19 +5,25 @@
 @layer base {
   :root {
     --color-navy: #12263A;
+    --color-navy-dark: #0b1825;
     --color-teal: #1B7F79;
     --color-teal-deep: #145C58;
+    --color-teal-light: #229c95;
     --color-offwhite: #F7F8F6;
     --color-mint: #E8F4F1;
+    --color-mint-border: #D1E7E3;
     --color-ink: #17202A;
     --color-slate: #52616B;
     --color-gold: #C59B45;
+    --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -32,6 +38,22 @@
   *:focus-visible {
     outline: 2px solid #1B7F79 !important;
     outline-offset: 2px !important;
+  }
+
+  /* Custom discreet scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F8F6;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D1E7E3;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1B7F79;
   }
 
   /* Strict prefers-reduced-motion: disable non-essential motion while keeping layout intact */
@@ -59,39 +81,56 @@
     border-color: rgba(18, 38, 58, 0.08);
   }
 
-  /* Scroll Reveal System */
+  /* Unified Scroll Reveal System */
   .uh-reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate3d(0, 14px, 0);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
 
   .uh-reveal.is-revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   /* Stagger delays */
-  .uh-delay-1 { transition-delay: 60ms; }
-  .uh-delay-2 { transition-delay: 120ms; }
-  .uh-delay-3 { transition-delay: 180ms; }
-  .uh-delay-4 { transition-delay: 240ms; }
-  .uh-delay-5 { transition-delay: 300ms; }
-  .uh-delay-6 { transition-delay: 360ms; }
+  .uh-delay-1 { transition-delay: 50ms; }
+  .uh-delay-2 { transition-delay: 100ms; }
+  .uh-delay-3 { transition-delay: 150ms; }
+  .uh-delay-4 { transition-delay: 200ms; }
+  .uh-delay-5 { transition-delay: 250ms; }
+  .uh-delay-6 { transition-delay: 300ms; }
 
-  /* Card hover glow and micro-interaction */
+  /* Premium Card Hover & Elevation */
   @media (hover: hover) and (pointer: fine) {
     .uh-card-hover {
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.28s ease;
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.32s ease;
+      will-change: transform, box-shadow;
     }
     .uh-card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px -4px rgba(18, 38, 58, 0.08), 0 4px 12px -2px rgba(27, 127, 121, 0.06);
-      border-color: rgba(27, 127, 121, 0.45);
+      transform: translate3d(0, -3px, 0);
+      box-shadow: 0 14px 32px -4px rgba(18, 38, 58, 0.08), 0 4px 12px -2px rgba(27, 127, 121, 0.05);
+      border-color: rgba(27, 127, 121, 0.35);
     }
+  }
+
+  /* Seamless section blend transitions */
+  .section-blend-top {
+    position: relative;
+  }
+  .section-blend-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: linear-gradient(to bottom, rgba(18, 38, 58, 0.03), transparent);
+    pointer-events: none;
   }
 
   /* Faint architectural watermarks */

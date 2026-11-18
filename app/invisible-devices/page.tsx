@@ -46,7 +46,7 @@ export default function InvisibleDevicesPage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-slate leading-relaxed">
-                When people upgrade their technology, old phones, tablets, and laptops rarely get recycled or donated immediately. Instead, they become &ldquo;invisible&rdquo;—banished to desk drawers for years due to data security anxiety and lack of clear guidance.
+                When people upgrade their technology, old phones, tablets, and laptops rarely get recycled or donated immediately. Instead, they become &ldquo;invisible&rdquo;—banished to desk drawers for years due to data security anxiety and lack of clear guidance. Project Invisible Devices helps people navigate responsible next steps across repair, reuse, donation, and certified recycling.
               </p>
 
               <div className="pt-2">
@@ -116,39 +116,72 @@ export default function InvisibleDevicesPage() {
                 Circularity Hierarchy
               </span>
               <h2 className="text-3xl font-extrabold text-navy tracking-tight">
-                Our rule of thumb for hardware exit.
+                Four responsible pathways for unused technology.
               </h2>
+              <p className="text-sm text-slate">
+                Before letting obsolete hardware languish in storage, follow our structured circular decision hierarchy.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3">
-                <div className="flex items-center gap-2 text-teal">
-                  <Wrench className="w-5 h-5" />
-                  <span className="font-bold text-navy text-base">1. Repair First</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-teal">
+                    <Wrench className="w-5 h-5" />
+                    <span className="font-bold text-navy text-base">1. Repair</span>
+                  </div>
+                  <p className="text-xs text-slate leading-relaxed">
+                    Fix minor faults such as battery degradation or cracked screens before considering replacement. Extending active lifespan by 2 years cuts carbon footprints significantly.
+                  </p>
                 </div>
-                <p className="text-sm text-slate leading-relaxed">
-                  If minor faults exist (such as battery degradation or cracked glass), fix them before replacing. Extending a device&apos;s active life by two years drastically reduces its carbon footprint.
-                </p>
+                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
+                  Extend Lifespan
+                </span>
               </div>
 
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3">
-                <div className="flex items-center gap-2 text-teal">
-                  <Smartphone className="w-5 h-5" />
-                  <span className="font-bold text-navy text-base">2. Reuse &amp; Donate</span>
+              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-teal">
+                    <Smartphone className="w-5 h-5" />
+                    <span className="font-bold text-navy text-base">2. Reuse</span>
+                  </div>
+                  <p className="text-xs text-slate leading-relaxed">
+                    Repurpose functional devices within your household or workplace as secondary test beds, dedicated media controllers, or backup terminals.
+                  </p>
                 </div>
-                <p className="text-sm text-slate leading-relaxed">
-                  Functional tech should be passed down, traded in, or donated to verified educational and grassroots programs after thorough personal data wiping.
-                </p>
+                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
+                  Repurpose In-Place
+                </span>
               </div>
 
-              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3">
-                <div className="flex items-center gap-2 text-teal">
-                  <Recycle className="w-5 h-5" />
-                  <span className="font-bold text-navy text-base">3. Responsible Recycling</span>
+              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-teal">
+                    <ShieldCheck className="w-5 h-5" />
+                    <span className="font-bold text-navy text-base">3. Donation</span>
+                  </div>
+                  <p className="text-xs text-slate leading-relaxed">
+                    Pass wiped hardware to verified educational charities, rural classrooms, and community centers to bridge the digital access gap.
+                  </p>
                 </div>
-                <p className="text-sm text-slate leading-relaxed">
-                  When hardware has reached terminal non-operation, certified electronic recyclers safely dismantle batteries and salvage raw components without toxic landfill dumping.
-                </p>
+                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
+                  Social Utility
+                </span>
+              </div>
+
+              <div className="p-6 rounded-card bg-white border border-mint-border space-y-3 flex flex-col justify-between shadow-subtle hover:border-teal/40 transition-colors">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2 text-teal">
+                    <Recycle className="w-5 h-5" />
+                    <span className="font-bold text-navy text-base">4. Recycling</span>
+                  </div>
+                  <p className="text-xs text-slate leading-relaxed">
+                    When hardware is non-functional or unrecoverable, channel it to certified e-waste handlers to recover critical rare-earth minerals safely.
+                  </p>
+                </div>
+                <span className="text-[11px] font-mono text-teal-deep font-semibold bg-mint/50 px-2 py-0.5 rounded self-start">
+                  Material Recovery
+                </span>
               </div>
             </div>
 

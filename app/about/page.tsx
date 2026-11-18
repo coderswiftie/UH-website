@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 
+import { SignalBadge } from "@/components/ui/SignalBadge";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -26,9 +27,12 @@ export default function AboutPage() {
         <Section variant="offwhite" spacing="spacious" className="border-b border-mint-border">
           <Container>
             <ScrollReveal className="max-w-3xl space-y-6">
-              <p className="text-xs uppercase tracking-widest font-semibold text-teal">
-                Origin &amp; Mission • Human Security
-              </p>
+              <div className="flex items-center gap-2.5">
+                <SignalBadge number="01" label="ORIGIN & MISSION" />
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate/70">
+                  HUMAN SECURITY
+                </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-navy tracking-tight leading-tight">
                 Minds over Manipulation.
               </h1>

@@ -2,7 +2,8 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Calendar, Filter, Search, Tag, X } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Filter, Search, X } from "lucide-react";
 import { ScamBreakdown } from "@/lib/content/types";
 
 interface ScamLibraryBrowserProps {
@@ -46,11 +47,24 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
         // Search query
         if (searchQuery.trim()) {
           const q = searchQuery.toLowerCase();
-          const matchesTitle = scam.title.toLowerCase().includes(q);
-          const matchesStory = scam.story.toLowerCase().includes(q);
-          const matchesPsychology = scam.psychology.toLowerCase().includes(q);
-          const matchesTags = scam.tags.some((t) => t.toLowerCase().includes(q));
-          if (!matchesTitle && !matchesStory && !matchesPsychology && !matchesTags) {
+          const searchableText = [
+            scam.title,
+            scam.category,
+            scam.story,
+            scam.psychology,
+            scam.exitPoint,
+            scam.takeaway,
+            ...scam.tags,
+            ...(scam.snapshotItems?.map((i) => `${i.label} ${i.value}`) || []),
+            ...(scam.turningPoint?.paragraphs || []),
+            ...(scam.humanHack?.paragraphs || []),
+            ...(scam.missedSignal?.paragraphs || []),
+            ...(scam.counterMove?.paragraphs || []),
+            ...(scam.biggerInsight?.paragraphs || []),
+          ]
+            .join(" ")
+            .toLowerCase();
+          if (!searchableText.includes(q)) {
             return false;
           }
         }
@@ -130,8 +144,37 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
           )}
         </div>
 
+        {/* Quick Tactic Filter Chips */}
+        <div className="pt-2 border-t border-mint-border/60">
+          <label className="block text-[11px] font-mono uppercase tracking-wider text-slate font-bold mb-2">
+            Filter by Psychological Vector:
+          </label>
+          <div className="flex flex-wrap gap-1.5">
+            {tags.map((tag) => {
+              const isSelected = selectedTag === tag;
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => {
+                    setSelectedTag(tag);
+                    setCurrentPage(1);
+                  }}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                    isSelected
+                      ? "bg-teal text-white shadow-sm font-semibold"
+                      : "bg-offwhite border border-mint-border text-slate hover:text-navy hover:bg-mint/50"
+                  }`}
+                >
+                  {tag === "All" ? "All Vectors" : `#${tag}`}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Filter Selectors */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-3 border-t border-mint-border/40">
           {/* Category */}
           <div>
             <label className="block text-[11px] font-bold uppercase tracking-wider text-navy mb-1.5">
@@ -251,55 +294,94 @@ export function ScamLibraryBrowser({ initialScams }: ScamLibraryBrowserProps) {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {paginatedScams.map((scam) => (
             <div
               key={scam.slug}
-              className="p-6 rounded-card border border-mint-border bg-white flex flex-col justify-between shadow-subtle hover:border-teal/40 hover:shadow-card transition-all"
+              className="rounded-card border border-mint-border bg-white flex flex-col justify-between shadow-subtle hover:border-teal/40 hover:shadow-card transition-all group relative overflow-hidden"
             >
-              <div className="space-y-3">
-                {/* Visual Placeholder */}
-                <div className="aspect-[16/9] rounded-lg bg-offwhite border border-dashed border-slate/20 flex items-center justify-center p-3 text-center">
-                  <span className="font-mono text-[10px] uppercase font-semibold text-slate">
-                    [PLACEHOLDER: Case Visual]
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-slate">
-                  <span className="font-semibold text-teal-deep bg-mint px-2 py-0.5 rounded text-[11px]">
-                    {scam.category}
-                  </span>
-                  <span className="text-[11px]">{scam.publicationDate}</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-navy tracking-tight leading-snug">
-                  {scam.title}
-                </h3>
-
-                <p className="text-xs text-slate leading-relaxed line-clamp-3">
-                  {scam.story}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {scam.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] px-2 py-0.5 rounded-full bg-offwhite border border-mint-border font-medium text-slate"
-                    >
-                      #{t}
+              <div>
+                {/* Case Visual Banner */}
+                {scam.coverImage ? (
+                  <Link
+                    href={`/scam-library/${scam.slug}`}
+                    className="block relative aspect-[16/10] w-full bg-navy-dark border-b border-mint-border/70 overflow-hidden"
+                  >
+                    <Image
+                      src={scam.coverImage}
+                      alt={scam.coverImageAlt || scam.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 560px"
+                      className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    <span className="absolute top-3 left-3 font-mono text-[10px] font-bold text-teal-light uppercase tracking-wider px-2.5 py-1 rounded bg-navy/85 border border-white/15 backdrop-blur-sm">
+                      CASE FILE // #{scam.caseNumber}
                     </span>
-                  ))}
+                  </Link>
+                ) : (
+                  <div className="bg-navy text-white p-4 space-y-2 border-b border-navy-dark select-none">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[10px] font-bold text-teal-light uppercase tracking-wider">
+                        CASE FILE // #{scam.caseNumber}
+                      </span>
+                      <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-white/10 text-white/80">
+                        INVESTIGATION
+                      </span>
+                    </div>
+                    <div className="text-[11px] font-mono text-white/70 line-clamp-1">
+                      TARGET: {scam.targetAudience || "General Public"}
+                    </div>
+                  </div>
+                )}
+
+                <div className="p-6 space-y-4">
+                  <div className="flex items-center justify-between gap-2 text-xs text-slate">
+                    <span className="font-semibold text-teal-deep bg-mint px-2.5 py-0.5 rounded text-[11px]">
+                      {scam.category}
+                    </span>
+                    <span className="text-[11px] font-mono text-slate/70">{scam.publicationDate}</span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-navy tracking-tight leading-snug group-hover:text-teal transition-colors">
+                    <Link href={`/scam-library/${scam.slug}`}>{scam.title}</Link>
+                  </h3>
+
+                  <p className="text-xs text-slate leading-relaxed line-clamp-3">
+                    {scam.story}
+                  </p>
+
+                  {/* Counter-Move preview highlight */}
+                  <div className="p-3 rounded-lg bg-offwhite border border-mint-border/80 text-[11px] space-y-0.5">
+                    <span className="font-mono text-[9px] uppercase font-bold text-teal block">
+                      The Counter-Move:
+                    </span>
+                    <p className="text-navy/90 font-medium line-clamp-2 leading-snug">
+                      {scam.exitPoint}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {scam.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[10px] px-2 py-0.5 rounded-full bg-offwhite border border-mint-border font-medium text-slate"
+                      >
+                        #{t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-mint-border/60">
+              <div className="px-6 py-4 border-t border-mint-border/60 flex items-center justify-between bg-offwhite/40">
                 <Link
                   href={`/scam-library/${scam.slug}`}
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal hover:text-teal-deep transition-colors"
                 >
                   <span>Deconstruct Case</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
+                <span className="text-[10px] font-mono text-slate/60">WEEKLY CASE #{scam.caseNumber}</span>
               </div>
             </div>
           ))}

@@ -2,22 +2,26 @@
 
 import React, { useEffect, useRef } from "react";
 
+type AllowedElements = "div" | "section" | "article" | "header" | "footer" | "span" | "p" | "li" | "ul";
+
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
   delay?: number; // millisecond delay
   threshold?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: AllowedElements;
+  style?: React.CSSProperties;
 }
 
 export function ScrollReveal({
   children,
   className = "",
   delay = 0,
-  threshold = 0.12,
+  threshold = 0.05,
   as: Component = "div",
+  style,
 }: ScrollRevealProps) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -33,21 +37,14 @@ export function ScrollReveal({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            if (delay > 0) {
-              const timer = setTimeout(() => {
-                el.classList.add("is-revealed");
-              }, delay);
-              return () => clearTimeout(timer);
-            } else {
-              el.classList.add("is-revealed");
-            }
+            el.classList.add("is-revealed");
             observer.unobserve(el);
           }
         });
       },
       {
         threshold,
-        rootMargin: "0px 0px -30px 0px",
+        rootMargin: "0px 0px -25px 0px",
       }
     );
 
@@ -56,11 +53,19 @@ export function ScrollReveal({
     return () => {
       observer.disconnect();
     };
-  }, [delay, threshold]);
+  }, [threshold]);
+
+  const combinedStyle: React.CSSProperties = {
+    ...style,
+    ...(delay > 0 ? { transitionDelay: `${delay}ms` } : {}),
+  };
 
   return (
-    // @ts-expect-error dynamic component type
-    <Component ref={ref} className={`uh-reveal ${className}`}>
+    <Component
+      ref={ref as any}
+      style={combinedStyle}
+      className={`uh-reveal ${className}`}
+    >
       {children}
     </Component>
   );

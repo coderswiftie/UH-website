@@ -21,25 +21,46 @@ const NAV_LINKS = [
 export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScroll = window.scrollY;
+          setIsScrolled(currentScroll > 15);
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (totalHeight > 0) {
+            setScrollProgress(Math.min(100, Math.max(0, (currentScroll / totalHeight) * 100)));
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ease-out ${
+        className={`sticky top-0 z-40 w-full transition-[background-color,border-color,box-shadow] duration-300 ease-out py-3 sm:py-3.5 ${
           isScrolled
-            ? "bg-offwhite/95 backdrop-blur-md border-b border-mint-border shadow-[0_4px_24px_rgba(18,38,58,0.06)] py-2.5 sm:py-3"
-            : "bg-offwhite/80 backdrop-blur-sm border-b border-transparent py-4 sm:py-5"
+            ? "bg-offwhite/95 backdrop-blur-md border-b border-mint-border shadow-[0_4px_20px_rgba(18,38,58,0.05)]"
+            : "bg-offwhite/85 backdrop-blur-sm border-b border-mint-border/40"
         }`}
       >
+        {/* Subtle reading progress indicator line */}
+        <div
+          className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-teal to-teal-light transition-[width] duration-150 ease-out opacity-80"
+          style={{ width: `${scrollProgress}%` }}
+          aria-hidden="true"
+        />
         <Container className="flex items-center justify-between">
           {/* Logo & Brand Identity */}
           <Link
